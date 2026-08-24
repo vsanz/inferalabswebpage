@@ -79,6 +79,16 @@
        works today and upgrades with a one-line change. */
     var form = document.getElementById('contact-form');
     if (!form) return;
+
+    /* Sector deep links (?sector=key#contact) preselect the dropdown, so every
+       enquiry arrives already attributed to the sector it came from. */
+    try {
+      var key = new URLSearchParams(window.location.search).get('sector');
+      if (key) {
+        var opt = form.querySelector('option[data-key="' + key.replace(/"/g, '') + '"]');
+        if (opt) opt.selected = true;
+      }
+    } catch (e) { /* older browsers: dropdown just keeps its default */ }
     var status = form.querySelector('.form-status');
     var say = function (msg, kind) {
       if (!status) return;
