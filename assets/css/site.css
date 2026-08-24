@@ -420,3 +420,58 @@ p{margin:0}
   .metrics{grid-template-columns:repeat(3,1fr)}
   .mv{font-size:1.6rem}
 }
+
+/* ---- research figure ticker -------------------------------------------- */
+.ticker-label{
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin-top:.35rem;
+}
+.ticker{
+  margin:1.1rem 0 1rem;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+}
+.ticker-track{
+  /* spacing lives on the tiles, not as flex gap: with `gap` the -50% translate
+     is short by half a gap and the loop visibly jumps once per cycle */
+  display:flex;align-items:flex-start;width:max-content;
+  animation:ticker-scroll 60s linear infinite;
+}
+.ticker-copy{display:contents}
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track{animation-play-state:paused}
+@keyframes ticker-scroll{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+.tile{margin:0 1rem 0 0;width:max-content;max-width:340px}
+.tile img{
+  height:180px;width:auto;border-radius:var(--r-sm);border:1px solid var(--line);
+  background:var(--surface);box-shadow:var(--shadow-sm);
+}
+.tile figcaption{
+  margin-top:.6rem;max-width:320px;font-size:.82rem;line-height:1.45;color:var(--ink-2);
+}
+.tile-paper{
+  display:block;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.2rem;
+}
+.ticker-credit{
+  font-size:.8rem;line-height:1.6;color:var(--ink-3);max-width:74ch;margin-bottom:2.25rem;
+}
+.ticker-credit a{color:var(--ink-2);text-decoration:underline;text-underline-offset:2px}
+.ticker-credit a:hover{color:var(--accent)}
+
+/* the gap the ticker leaves behind the section head */
+#research .section-head{margin-bottom:1.25rem}
+
+@media (max-width:680px){
+  .tile img{height:150px}
+  .tile figcaption{font-size:.78rem}
+}
+@media (prefers-reduced-motion:reduce){
+  /* no auto-scroll: hand control to the reader instead */
+  .ticker{overflow-x:auto;-webkit-mask-image:none;mask-image:none;padding-bottom:.5rem}
+  .ticker-track{animation:none;width:auto}
+  .ticker-copy{display:none}
+}
