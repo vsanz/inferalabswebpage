@@ -82,8 +82,8 @@ p{margin:0}
   display:flex;align-items:center;gap:1.5rem;min-height:var(--header-h);
 }
 .brand{display:flex;align-items:center;flex:none;min-width:0}
-.brand img{width:172px;height:auto;transition:width .2s ease}
-.site-header.is-stuck .brand img{width:150px}
+.brand img{width:212px;height:auto;transition:width .2s ease}
+.site-header.is-stuck .brand img{width:184px}
 .logo-dark{display:none}
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]) .logo-light{display:none}
@@ -304,7 +304,7 @@ p{margin:0}
 /* footer ---------------------------------------------------------------- */
 .site-footer{background:var(--bg-alt);border-top:1px solid var(--line);padding:3rem 0 2.5rem;margin-top:0}
 .footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:2.5rem}
-.footer-brand img{width:158px;margin-bottom:1rem}
+.footer-brand img{width:196px;margin-bottom:1rem}
 .footer-brand p{font-size:.92rem;color:var(--ink-3);max-width:34ch;line-height:1.65}
 .footer-col h4{font-family:var(--font-mono);font-size:.7rem;font-weight:500;letter-spacing:.15em;
   text-transform:uppercase;color:var(--ink-3);margin-bottom:.9rem}
@@ -435,14 +435,15 @@ p{margin:0}
   /* spacing lives on the tiles, not as flex gap: with `gap` the -50% translate
      is short by half a gap and the loop visibly jumps once per cycle */
   display:flex;align-items:flex-start;width:max-content;
-  animation:ticker-scroll 60s linear infinite;
+  animation:ticker-scroll 32s linear infinite;
 }
 .ticker-copy{display:contents}
 .ticker:hover .ticker-track,
 .ticker:focus-within .ticker-track{animation-play-state:paused}
 @keyframes ticker-scroll{
+  /* four identical runs in the track, so one run is exactly -25% */
   from{transform:translate3d(0,0,0)}
-  to{transform:translate3d(-50%,0,0)}
+  to{transform:translate3d(-25%,0,0)}
 }
 .tile{margin:0 1rem 0 0;width:max-content;max-width:340px}
 .tile img{
@@ -474,4 +475,10 @@ p{margin:0}
   .ticker{overflow-x:auto;-webkit-mask-image:none;mask-image:none;padding-bottom:.5rem}
   .ticker-track{animation:none;width:auto}
   .ticker-copy{display:none}
+}
+
+/* keep the enlarged logo from crowding the menu button on small screens */
+@media (max-width:680px){
+  .brand img,.site-header.is-stuck .brand img{width:166px}
+  .header-tools{margin-left:auto}
 }
