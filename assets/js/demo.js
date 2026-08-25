@@ -226,7 +226,19 @@
       if (!root) return Promise.resolve(null);
       return Promise.all(order.map(function (id) {
         return fetch('/assets/demo/' + id + '.json').then(function (r) { return r.json(); });
-      })).then(function (traces) { return new Player(root, traces); });
+      })).then(function (traces) {
+        var player = new Player(root, traces);
+        /* Mounting injects a tall block ABOVE any later section, so a hash the
+           browser already jumped to on load now points at the wrong place --
+           landing on Fundadores instead of Contacto. Re-scroll once mounted,
+           unless the hash addresses a scenario (which the player handles). */
+        var h = (window.location.hash || '').replace(/^#/, '');
+        if (h && !traces.some(function (t) { return t.id === h; })) {
+          var target = document.getElementById(h);
+          if (target) target.scrollIntoView({ block: 'start' });
+        }
+        return player;
+      });
     }
   };
 })();

@@ -80,14 +80,33 @@
     var form = document.getElementById('contact-form');
     if (!form) return;
 
-    /* Sector deep links (?sector=key#contact) preselect the dropdown, so every
-       enquiry arrives already attributed to the sector it came from. */
+    /* Sector links are handled in-page: no reload, so nothing can shift under
+       the anchor. Reloading was landing people on Fundadores instead of
+       Contacto, because mounting the demo injects a tall block above it after
+       the browser has already jumped. */
+    var preselect = function (key) {
+      var opt = form.querySelector('option[data-key="' + key.replace(/"/g, '') + '"]');
+      if (opt) { opt.selected = true; return true; }
+      return false;
+    };
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href*="?sector="]');
+      if (!a) return;
+      var m = a.getAttribute('href').match(/\?sector=([a-z-]+)/);
+      var contact = document.getElementById('contact');
+      if (!m || !contact) return;
+      e.preventDefault();
+      preselect(m[1]);
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '?sector=' + m[1] + '#contact');
+      }
+      contact.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+
+    /* Direct or shared links still arrive with the query string set. */
     try {
       var key = new URLSearchParams(window.location.search).get('sector');
-      if (key) {
-        var opt = form.querySelector('option[data-key="' + key.replace(/"/g, '') + '"]');
-        if (opt) opt.selected = true;
-      }
+      if (key) preselect(key);
     } catch (e) { /* older browsers: dropdown just keeps its default */ }
     var status = form.querySelector('.form-status');
     var say = function (msg, kind) {

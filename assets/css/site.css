@@ -488,4 +488,11 @@ p{margin:0}
   margin:1.4rem 0 1.5rem;padding-left:.9rem;border-left:2px solid var(--tint);
   font-size:.86rem;line-height:1.65;color:var(--ink-3);max-width:76ch;
 }
+/* Reserve the height the demo will occupy once mounted. Without this the
+   injected block pushes every later section down after the browser has
+   already jumped to an anchor, so ?sector=...#contact landed on
+   Fundadores. Measured at 1200/768/390px. */
 #infera-demo{border-radius:var(--r-lg);overflow:hidden}
+.js #infera-demo{min-height:1485px}
+@media (max-width:900px){.js #infera-demo{min-height:1820px}}
+@media (max-width:560px){.js #infera-demo{min-height:2970px}}
