@@ -1,0 +1,196 @@
+{
+  "id": "field-logbook-obligations",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "Qué anotar en el cuaderno de campo",
+    "en": "What to record in the field logbook"
+  },
+  "profile": {
+    "crop": "Clementina (cítricos)",
+    "area_ha": 40,
+    "comarca": "Ribera Alta",
+    "irrigation": "drip",
+    "production": "conventional",
+    "watercourse_distance_m": 200,
+    "pest": "Delottococcus aberiae (cotonet)",
+    "harvest_in_days": 15
+  },
+  "question": {
+    "es": "Después del tratamiento, ¿qué tengo que registrar en el cuaderno de campo y desde cuándo me obliga el cuaderno digital?",
+    "en": "After treatment, what must I record in the field logbook, and since when does the digital logbook apply to me?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "Explotación de 40 ha de cultivo permanente en regadío. Ambos umbrales de la disposición final octava se superan, así que la fecha de entrada en vigor del cuaderno digital depende del perfil, no es única.",
+        "en": "A 40 ha permanent-crop holding under irrigation. Both thresholds in the eighth final provision are exceeded, so the digital logbook's entry into force depends on the profile rather than being a single date."
+      },
+      "detail": {
+        "cultivo_permanente_ha": 40,
+        "umbral_cultivos_permanentes_ha": 10,
+        "regadio": true,
+        "umbral_regadio_ha": 5
+      }
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "rd1311-a16",
+          "title": {
+            "es": "Registro de los tratamientos fitosanitarios",
+            "en": "Register of plant protection treatments"
+          },
+          "authority": "BOE",
+          "ref": "RD 1311/2012, artículo 16",
+          "url": "https://www.boe.es/eli/es/rd/2012/09/14/1311",
+          "as_of": "2025-12-19",
+          "snippet": {
+            "es": "cada explotación agraria mantendrá actualizado el registro de tratamientos fitosanitarios con la información especificada en la Parte I del anexo III, que recibirá la denominación de «cuaderno de explotación». A partir de esa misma fecha, cada persona o entidad que requiera la aplicación de…",
+            "en": "cada explotación agraria mantendrá actualizado el registro de tratamientos fitosanitarios con la información especificada en la Parte I del anexo III, que recibirá la denominación de «cuaderno de explotación». A partir de esa misma fecha, cada persona o entidad que requiera la aplicación de…"
+          },
+          "used": true
+        },
+        {
+          "id": "rd1311-an3",
+          "title": {
+            "es": "Contenido del cuaderno de explotación",
+            "en": "Contents of the field logbook"
+          },
+          "authority": "BOE",
+          "ref": "RD 1311/2012, anexo III, parte I",
+          "url": "https://www.boe.es/eli/es/rd/2012/09/14/1311",
+          "as_of": "2025-12-19",
+          "snippet": {
+            "es": "Parte I. Cuaderno de explotación A. Información general: 1. Datos generales de la explotación: a. Nombre, dirección de la explotación y, en su caso, número de registro. b. Nombre y apellidos y NIF del titular. c. En su caso, identificación del personal propio con carné de usuario profesional o que pueda acreditar la…",
+            "en": "Parte I. Cuaderno de explotación A. Información general: 1. Datos generales de la explotación: a. Nombre, dirección de la explotación y, en su caso, número de registro. b. Nombre y apellidos y NIF del titular. c. En su caso, identificación del personal propio con carné de usuario profesional o que pueda acreditar la…"
+          },
+          "used": true
+        },
+        {
+          "id": "rd1054-a9",
+          "title": {
+            "es": "El Cuaderno Digital de Explotación Agrícola",
+            "en": "The digital farm logbook"
+          },
+          "authority": "BOE",
+          "ref": "RD 1054/2022, artículo 9",
+          "url": "https://www.boe.es/eli/es/rd/2022/12/27/1054",
+          "as_of": "2025-12-20",
+          "snippet": {
+            "es": "gestionarán electrónicamente, sean personas físicas o jurídicas o entes sin personalidad jurídica, por aplicación del artículo 14 apartados 2 y 3 de la Ley 39/2015, de 1 de octubre, un Cuaderno Digital de Explotación Agrícola, con el contenido mínimo del anexo II cuya información se consignará, de…",
+            "en": "gestionarán electrónicamente, sean personas físicas o jurídicas o entes sin personalidad jurídica, por aplicación del artículo 14 apartados 2 y 3 de la Ley 39/2015, de 1 de octubre, un Cuaderno Digital de Explotación Agrícola, con el contenido mínimo del anexo II cuya información se consignará, de…"
+          },
+          "used": true
+        },
+        {
+          "id": "rd1054-df8",
+          "title": {
+            "es": "Entrada en vigor",
+            "en": "Entry into force"
+          },
+          "authority": "BOE",
+          "ref": "RD 1054/2022, disposición final octava",
+          "url": "https://www.boe.es/eli/es/rd/2022/12/27/1054",
+          "as_of": "2025-12-20",
+          "snippet": {
+            "es": "El artículo 9 entrará en vigor el 1 de septiembre de 2023 para aquellas explotaciones agrarias que cumplan alguna de las siguientes condiciones: a) Superen alguna de las dimensiones máximas siguientes, establecidas por grupo de cultivo. i) 30 hectáreas de tierra de cultivo ii) 30 hectáreas de pastos permanentes iii) 10…",
+            "en": "El artículo 9 entrará en vigor el 1 de septiembre de 2023 para aquellas explotaciones agrarias que cumplan alguna de las siguientes condiciones: a) Superen alguna de las dimensiones máximas siguientes, establecidas por grupo de cultivo. i) 30 hectáreas de tierra de cultivo ii) 30 hectáreas de pastos permanentes iii) 10…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "La explotación debe mantener actualizado un registro de los tratamientos fitosanitarios, denominado cuaderno de explotación, con el contenido de la parte I del anexo III.",
+            "en": "The holding must keep an up-to-date register of plant protection treatments, called the field logbook, with the content set out in Part I of Annex III."
+          },
+          "citations": [
+            {
+              "source_id": "rd1311-a16",
+              "locator": "art. 16.1",
+              "cited_text": {
+                "es": "cada explotación agraria mantendrá actualizado el registro de tratamientos fitosanitarios con la información especificada en la Parte I del anexo III, que recibirá la denominación de «cuaderno de explotación». A partir de esa misma fecha, cada persona o entidad que requiera la aplicación de…",
+                "en": "cada explotación agraria mantendrá actualizado el registro de tratamientos fitosanitarios con la información especificada en la Parte I del anexo III, que recibirá la denominación de «cuaderno de explotación». A partir de esa misma fecha, cada persona o entidad que requiera la aplicación de…"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "El anexo III fija qué debe constar: datos generales de la explotación y de cada tratamiento aplicado.",
+            "en": "Annex III sets out what must appear: general details of the holding and of each treatment applied."
+          },
+          "citations": [
+            {
+              "source_id": "rd1311-an3",
+              "locator": "anexo III, parte I",
+              "cited_text": {
+                "es": "Parte I. Cuaderno de explotación A. Información general: 1. Datos generales de la explotación: a. Nombre, dirección de la explotación y, en su caso, número de registro. b. Nombre y apellidos y NIF del titular. c. En su caso, identificación del personal propio con carné de usuario profesional o que…",
+                "en": "Parte I. Cuaderno de explotación A. Información general: 1. Datos generales de la explotación: a. Nombre, dirección de la explotación y, en su caso, número de registro. b. Nombre y apellidos y NIF del titular. c. En su caso, identificación del personal propio con carné de usuario profesional o que…"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "Ese cuaderno debe gestionarse electrónicamente como Cuaderno Digital de Explotación Agrícola, con el contenido mínimo de su anexo II.",
+            "en": "That logbook must be kept electronically as the Digital Farm Logbook, with the minimum content of its Annex II."
+          },
+          "citations": [
+            {
+              "source_id": "rd1054-a9",
+              "locator": "art. 9.1",
+              "cited_text": {
+                "es": "gestionarán electrónicamente, sean personas físicas o jurídicas o entes sin personalidad jurídica, por aplicación del artículo 14 apartados 2 y 3 de la Ley 39/2015, de 1 de octubre, un Cuaderno Digital de Explotación Agrícola, con el contenido mínimo del anexo II cuya información se consignará, de…",
+                "en": "gestionarán electrónicamente, sean personas físicas o jurídicas o entes sin personalidad jurídica, por aplicación del artículo 14 apartados 2 y 3 de la Ley 39/2015, de 1 de octubre, un Cuaderno Digital de Explotación Agrícola, con el contenido mínimo del anexo II cuya información se consignará, de…"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "Para esta explotación la obligación digital rige desde el 1 de septiembre de 2023, no desde julio de 2024: supera las 10 ha de cultivos permanentes y las 5 ha de regadío que fija la disposición final octava.",
+            "en": "For this holding the digital obligation has applied since 1 September 2023, not July 2024: it exceeds both the 10 ha of permanent crops and the 5 ha of irrigated area set by the eighth final provision."
+          },
+          "citations": [
+            {
+              "source_id": "rd1054-df8",
+              "locator": "disp. final 8ª.1",
+              "cited_text": {
+                "es": "El artículo 9 entrará en vigor el 1 de septiembre de 2023 para aquellas explotaciones agrarias que cumplan alguna de las siguientes condiciones: a) Superen alguna de las dimensiones máximas siguientes, establecidas por grupo de cultivo. i) 30 hectáreas de tierra de cultivo ii) 30 hectáreas de pastos permanentes iii) 10 hectáreas de cultivos permanentes b)…",
+                "en": "El artículo 9 entrará en vigor el 1 de septiembre de 2023 para aquellas explotaciones agrarias que cumplan alguna de las siguientes condiciones: a) Superen alguna de las dimensiones máximas siguientes, establecidas por grupo de cultivo. i) 30 hectáreas de tierra de cultivo ii) 30 hectáreas de pastos permanentes iii) 10 hectáreas de cultivos permanentes b)…"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "medium",
+      "reason": {
+        "es": "La obligación y su fecha están fijadas en normativa estatal consolidada. El procedimiento y el canal concretos de presentación los fija cada comunidad autónoma, y esa fuente autonómica no está en el corpus.",
+        "en": "The obligation and its date come from consolidated national law. The specific filing procedure and channel are set by each autonomous community, and that regional source is not in the corpus."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "BOE — RD 1311/2012 (texto consolidado)",
+      "as_of": "2025-12-19"
+    },
+    {
+      "name": "BOE — RD 1054/2022 (texto consolidado)",
+      "as_of": "2025-12-20"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

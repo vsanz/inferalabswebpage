@@ -1,0 +1,193 @@
+{
+  "id": "cotonet-authorised-products",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "Productos autorizados contra el cotonet",
+    "en": "Authorised products for cotonet"
+  },
+  "profile": {
+    "crop": "Clementina (cítricos)",
+    "area_ha": 40,
+    "comarca": "Ribera Alta",
+    "irrigation": "drip",
+    "production": "conventional",
+    "watercourse_distance_m": 200,
+    "pest": "Delottococcus aberiae (cotonet)",
+    "harvest_in_days": 15
+  },
+  "question": {
+    "es": "¿Qué productos fitosanitarios están autorizados contra el cotonet (Delottococcus aberiae) en clementina?",
+    "en": "Which plant protection products are authorised against cotonet (Delottococcus aberiae) on clementine?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "El registro no clasifica por nombre común. «Cotonet» se resuelve a la familia Pseudococcidae, que es el nivel al que el registro concede autorizaciones.",
+        "en": "The registry does not index by common name. “Cotonet” resolves to the family Pseudococcidae, which is the level at which the registry grants authorisations."
+      },
+      "detail": {
+        "nombre_comun": "cotonet",
+        "especie": "Delottococcus aberiae",
+        "familia": "Pseudococcidae",
+        "categoria_registro": "Cochinillas harinosas, Pseudococcidae"
+      }
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "agentes",
+          "title": {
+            "es": "Agentes autorizados para mandarino/clementino",
+            "en": "Authorised agents for mandarin/clementine"
+          },
+          "authority": "MAPA",
+          "ref": "Registro MAPA — agentes por cultivo",
+          "url": "https://servicio.mapa.gob.es/regfiweb/",
+          "as_of": "2026-08-25",
+          "snippet": {
+            "es": "Cochinillas harinosas, Pseudococcidae - Cochinillas, Coccidae - Dicotiledóneas anuales - Dicotiledóneas, malas hierbas…",
+            "en": "Cochinillas harinosas, Pseudococcidae - Cochinillas, Coccidae - Dicotiledóneas anuales - Dicotiledóneas, malas hierbas…"
+          },
+          "used": true
+        },
+        {
+          "id": "p-100286",
+          "title": {
+            "es": "DELTAGRI",
+            "en": "DELTAGRI"
+          },
+          "authority": "MAPA",
+          "ref": "Ficha oficial — DELTAGRI (ES-00013)",
+          "url": "https://servicio.mapa.gob.es/regfiweb/",
+          "as_of": "2026-08-25",
+          "snippet": {
+            "es": "Usos autorizados extraídos de la ficha oficial (por coordenadas de tabla): Cultivo: Mandarino (incluido | Agente: Cochinillas harinosas | Dosis: 0,03 % 1400 l/ha Cultivo: Mandarino (incluido | Agente: Cochinillas, Coccidae | Dosis: 0,03 % 1400 l/ha",
+            "en": "Usos autorizados extraídos de la ficha oficial (por coordenadas de tabla): Cultivo: Mandarino (incluido | Agente: Cochinillas harinosas | Dosis: 0,03 % 1400 l/ha Cultivo: Mandarino (incluido | Agente: Cochinillas, Coccidae | Dosis: 0,03 % 1400 l/ha"
+          },
+          "used": true
+        },
+        {
+          "id": "p-114236",
+          "title": {
+            "es": "KAISO SORBIE",
+            "en": "KAISO SORBIE"
+          },
+          "authority": "MAPA",
+          "ref": "Ficha oficial — KAISO SORBIE (25722)",
+          "url": "https://servicio.mapa.gob.es/regfiweb/",
+          "as_of": "2026-08-25",
+          "snippet": {
+            "es": "Usos autorizados extraídos de la ficha oficial (por coordenadas de tabla): Cultivo: Mandarino (incluido | Agente: Cochinillas harinosas | Dosis: 0,02 - 0,03 % En hojas no enrolladas. Dosis máxima: 0,3 kg/h Cultivo: Mandarino (incluido | Agente: Cochinillas, Coccidae | Dosis: 0,02 - 0,03 % En hojas no enrolladas. Dosis…",
+            "en": "Usos autorizados extraídos de la ficha oficial (por coordenadas de tabla): Cultivo: Mandarino (incluido | Agente: Cochinillas harinosas | Dosis: 0,02 - 0,03 % En hojas no enrolladas. Dosis máxima: 0,3 kg/h Cultivo: Mandarino (incluido | Agente: Cochinillas, Coccidae | Dosis: 0,02 - 0,03 % En hojas no enrolladas. Dosis…"
+          },
+          "used": true
+        },
+        {
+          "id": "p-98966",
+          "title": {
+            "es": "LIMOCIDE J",
+            "en": "LIMOCIDE J"
+          },
+          "authority": "MAPA",
+          "ref": "Ficha oficial — LIMOCIDE J (ES-01273)",
+          "url": "https://servicio.mapa.gob.es/regfiweb/",
+          "as_of": "2026-08-25",
+          "snippet": {
+            "es": "Usos autorizados extraídos de la ficha oficial (por coordenadas de tabla): Cultivo: Mandarino (incluido Eficaz frente a Metcalfa pruinosa y Empoasca vitis. | Agente: Cochinillas harinosas | Dosis: 4 l/ha 6 500 l/ha Uso menor por jerarquía. Cultivo: Mandarino (incluido Eficaz frente a Metcalfa pruinosa y Empoasca…",
+            "en": "Usos autorizados extraídos de la ficha oficial (por coordenadas de tabla): Cultivo: Mandarino (incluido Eficaz frente a Metcalfa pruinosa y Empoasca vitis. | Agente: Cochinillas harinosas | Dosis: 4 l/ha 6 500 l/ha Uso menor por jerarquía. Cultivo: Mandarino (incluido Eficaz frente a Metcalfa pruinosa y Empoasca…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "El registro no contiene una entrada para Delottococcus aberiae. Autoriza a nivel de familia, bajo la categoría «Cochinillas harinosas, Pseudococcidae», que es la que corresponde al cotonet.",
+            "en": "The registry has no entry for Delottococcus aberiae. It authorises at family level, under the category “Cochinillas harinosas, Pseudococcidae”, which is the one covering cotonet."
+          },
+          "citations": [
+            {
+              "source_id": "agentes",
+              "locator": "agentes por cultivo",
+              "cited_text": {
+                "es": "Cochinillas harinosas, Pseudococcidae - Cochinillas, Coccidae - Dicotiledóneas anuales - Dicotiledóneas, malas hierbas…",
+                "en": "Cochinillas harinosas, Pseudococcidae - Cochinillas, Coccidae - Dicotiledóneas anuales - Dicotiledóneas, malas hierbas…"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "Para mandarino/clementino hay tres productos en vigor autorizados frente a esa categoría. DELTAGRI, al 0,03 %.",
+            "en": "For mandarin/clementine three products in force are authorised against that category. DELTAGRI, at 0.03 %."
+          },
+          "citations": [
+            {
+              "source_id": "p-100286",
+              "locator": "ficha, usos autorizados",
+              "cited_text": {
+                "es": "Cultivo: Mandarino (incluido | Agente: Cochinillas harinosas | Dosis: 0,03 % 1400 l/ha Cultivo: Mandarino (incluido | Agente: Cochinillas, Coccidae | Dosis: 0,03 % 1400 l/ha",
+                "en": "Cultivo: Mandarino (incluido | Agente: Cochinillas harinosas | Dosis: 0,03 % 1400 l/ha Cultivo: Mandarino (incluido | Agente: Cochinillas, Coccidae | Dosis: 0,03 % 1400 l/ha"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "KAISO SORBIE, al 0,02–0,03 %.",
+            "en": "KAISO SORBIE, at 0.02–0.03 %."
+          },
+          "citations": [
+            {
+              "source_id": "p-114236",
+              "locator": "ficha, usos autorizados",
+              "cited_text": {
+                "es": "Cultivo: Mandarino (incluido | Agente: Cochinillas harinosas | Dosis: 0,02 - 0,03 % En hojas no enrolladas. Dosis máxima: 0,3 kg/h Cultivo: Mandarino (incluido | Agente: Cochinillas,…",
+                "en": "Cultivo: Mandarino (incluido | Agente: Cochinillas harinosas | Dosis: 0,02 - 0,03 % En hojas no enrolladas. Dosis máxima: 0,3 kg/h Cultivo: Mandarino (incluido | Agente: Cochinillas,…"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "Y LIMOCIDE J, a 4 l/ha, autorizado como uso menor por jerarquía.",
+            "en": "And LIMOCIDE J, at 4 l/ha, authorised as a minor use by hierarchy."
+          },
+          "citations": [
+            {
+              "source_id": "p-98966",
+              "locator": "ficha, usos autorizados",
+              "cited_text": {
+                "es": "Cultivo: Mandarino (incluido Eficaz frente a Metcalfa pruinosa y Empoasca vitis. | Agente: Cochinillas harinosas | Dosis: 4 l/ha 6 500 l/ha Uso menor por jerarquía. Cultivo: Mandarino…",
+                "en": "Cultivo: Mandarino (incluido Eficaz frente a Metcalfa pruinosa y Empoasca vitis. | Agente: Cochinillas harinosas | Dosis: 4 l/ha 6 500 l/ha Uso menor por jerarquía. Cultivo: Mandarino…"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "medium",
+      "reason": {
+        "es": "Las autorizaciones y las dosis se leen directamente del registro oficial. Lo que no consta en él es la equivalencia entre «cotonet» y Pseudococcidae: esa correspondencia taxonómica la aporta el sistema, no la fuente, y conviene que la confirme un técnico.",
+        "en": "The authorisations and doses are read directly from the official registry. What the registry does not state is the equivalence between “cotonet” and Pseudococcidae: that taxonomic mapping comes from the system, not the source, and should be confirmed by an adviser."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "MAPA regfiweb — registro de productos fitosanitarios",
+      "version": "1.3.22",
+      "as_of": "2026-08-25"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

@@ -1,0 +1,111 @@
+{
+  "id": "organic-conversion-conflict",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "Conversión a producción ecológica",
+    "en": "Conversion to organic production"
+  },
+  "profile": {
+    "crop": "Clementina (cítricos)",
+    "area_ha": 40,
+    "comarca": "Ribera Alta",
+    "irrigation": "drip",
+    "production": "conventional",
+    "watercourse_distance_m": 200,
+    "pest": "Delottococcus aberiae (cotonet)",
+    "harvest_in_days": 15
+  },
+  "question": {
+    "es": "Si convierto 10 ha a producción ecológica, ¿puedo seguir usando estos productos en las otras 30 ha?",
+    "en": "If I convert 10 ha to organic, can I keep using these products on the other 30 ha?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "La pregunta es sobre el alcance de la norma ecológica: si obliga a la explotación entera o admite unidades separadas.",
+        "en": "The question is about the scope of the organic rules: whether they bind the whole holding or allow separated units."
+      },
+      "detail": {
+        "ha_a_convertir": 10,
+        "ha_totales": 40,
+        "norma": "Reg. (UE) 2018/848"
+      }
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "reg848-a9",
+          "title": {
+            "es": "Normas generales de producción",
+            "en": "General production rules"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reg. (UE) 2018/848, art. 9",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R0848",
+          "as_of": "2025-03-25",
+          "snippet": {
+            "es": "The entire holding shall be managed in compliance with the requirements of this Regulation that apply to organic production. 3. For the purposes and uses referred to in Articles 24 and 25 and in Annex II, only products and substances that have been authorised pursuant to those provisions may be used in organic…",
+            "en": "The entire holding shall be managed in compliance with the requirements of this Regulation that apply to organic production. 3. For the purposes and uses referred to in Articles 24 and 25 and in Annex II, only products and substances that have been authorised pursuant to those provisions may be used in organic…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "La regla de partida del Reglamento (UE) 2018/848 es que la explotación entera debe gestionarse conforme a las normas de producción ecológica.",
+            "en": "The starting rule of Regulation (EU) 2018/848 is that the entire holding must be managed in compliance with the organic production rules."
+          },
+          "citations": [
+            {
+              "source_id": "reg848-a9",
+              "locator": "art. 9(2)",
+              "cited_text": {
+                "es": "The entire holding shall be managed in compliance with the requirements of this Regulation that apply to organic production. 3. For the purposes and uses referred to in Articles 24 and 25 and in Annex II, only products and substances that have been authorised pursuant to those provisions may be…",
+                "en": "The entire holding shall be managed in compliance with the requirements of this Regulation that apply to organic production. 3. For the purposes and uses referred to in Articles 24 and 25 and in Annex II, only products and substances that have been authorised pursuant to those provisions may be…"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "Por tanto no puede darse por hecho que las otras 30 ha sigan en convencional: convertir una parte obliga a comprobar si la explotación cumple las condiciones que permiten unidades de producción claramente separadas, y a acordarlo con la autoridad de control antes de empezar.",
+            "en": "So it cannot be assumed the other 30 ha simply continue conventionally: converting a part requires checking whether the holding meets the conditions allowing clearly separated production units, and agreeing this with the control body before starting."
+          },
+          "citations": [
+            {
+              "source_id": "reg848-a9",
+              "locator": "art. 9(2)",
+              "cited_text": {
+                "es": "The entire holding shall be managed in compliance with the requirements of this Regulation that apply to organic production. 3. For the purposes and uses referred to in Articles 24 and 25 and in Annex II, only products and substances that have been authorised pursuant to those provisions may be…",
+                "en": "The entire holding shall be managed in compliance with the requirements of this Regulation that apply to organic production. 3. For the purposes and uses referred to in Articles 24 and 25 and in Annex II, only products and substances that have been authorised pursuant to those provisions may be…"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "medium",
+      "reason": {
+        "es": "El texto citado es una versión consolidada de EUR-Lex, que es una herramienta documental y no el acto auténtico. Además, el control de la producción ecológica en la Comunitat Valenciana lo ejerce la autoridad autonómica, y esa fuente no está en el corpus.",
+        "en": "The cited text is a EUR-Lex consolidated version, a documentation tool and not the authentic act. Organic control in the Valencian Community is also exercised by the regional authority, and that source is not in the corpus."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "EUR-Lex — Reg. (UE) 2018/848 (texto consolidado)",
+      "as_of": "2025-03-25"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "resistance-strategy",
+  "status": "generated",
+  "kind": "refusal",
+  "title": {
+    "es": "Resistencia: qué cambiar",
+    "en": "Resistance: what to switch to"
+  },
+  "profile": {
+    "crop": "Clementina (cítricos)",
+    "area_ha": 40,
+    "comarca": "Ribera Alta",
+    "irrigation": "drip",
+    "production": "conventional",
+    "watercourse_distance_m": 200,
+    "pest": "Delottococcus aberiae (cotonet)",
+    "harvest_in_days": 15
+  },
+  "question": {
+    "es": "El cotonet no responde como el año pasado al producto que usamos. ¿A qué deberíamos cambiar?",
+    "en": "Cotonet is not responding as it did last season to the product we used. What should we switch to?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "Consulta de estrategia de manejo de resistencias, no de consulta registral.",
+        "en": "A resistance-management strategy question, not a registry lookup."
+      },
+      "detail": {
+        "clase": "criterio agronómico",
+        "plaga": "Delottococcus aberiae"
+      }
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "agentes",
+          "title": {
+            "es": "Agentes autorizados para mandarino/clementino",
+            "en": "Authorised agents for mandarin/clementine"
+          },
+          "authority": "MAPA",
+          "ref": "Registro MAPA — agentes por cultivo",
+          "url": "https://servicio.mapa.gob.es/regfiweb/",
+          "as_of": "2026-08-25",
+          "snippet": {
+            "es": "Cochinillas harinosas, Pseudococcidae - Cochinillas, Coccidae - Dicotiledóneas anuales - Dicotiledóneas,…",
+            "en": "Cochinillas harinosas, Pseudococcidae - Cochinillas, Coccidae - Dicotiledóneas anuales - Dicotiledóneas,…"
+          },
+          "used": false
+        }
+      ]
+    },
+    {
+      "type": "refusal",
+      "reason": {
+        "es": "No puedo responder a esto. Requiere criterio agronómico sobre una parcela concreta, no una consulta normativa.",
+        "en": "I can't answer this. It needs agronomic judgement about a specific plot, not a regulatory lookup."
+      },
+      "why_not_answerable": [
+        {
+          "es": "depende del historial de tratamientos de la parcela, que no consta en ninguna fuente pública",
+          "en": "depends on the plot's treatment history, which is not in any public source"
+        },
+        {
+          "es": "requiere datos locales de resistencia y observación de campo",
+          "en": "requires local resistance data and field observation"
+        },
+        {
+          "es": "una rotación incorrecta puede agravar la resistencia y costar una campaña",
+          "en": "an incorrect rotation can worsen resistance and cost a season"
+        }
+      ],
+      "escalate_to": "agronomist",
+      "what_it_could_do": {
+        "es": "Sí puedo listar los productos y modos de acción autorizados para esta plaga y cultivo, para que su asesor decida la rotación.",
+        "en": "What I can do is list the products and modes of action authorised for this pest and crop, so your adviser can choose the rotation."
+      }
+    },
+    {
+      "type": "confidence",
+      "level": "low",
+      "reason": {
+        "es": "Fuera del alcance del sistema por diseño.",
+        "en": "Out of the system's scope by design."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "MAPA regfiweb — registro de productos fitosanitarios",
+      "version": "1.3.22",
+      "as_of": "2026-08-25"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

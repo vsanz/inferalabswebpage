@@ -323,14 +323,14 @@ p{margin:0}
 .js .reveal.is-in{opacity:1;transform:none}
 
 /* responsive ------------------------------------------------------------ */
-@media (max-width:1120px){
+@media (max-width:1180px){
   .hero-grid{grid-template-columns:1fr;gap:2.5rem}
   .hero h1{max-width:24ch}
   .split,.contact-grid{grid-template-columns:1fr;gap:2rem}
   .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .founders{grid-template-columns:1fr}
 }
-@media (max-width:1120px){
+@media (max-width:1180px){
   .site-nav{
     position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;align-items:stretch;
     gap:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);
@@ -482,3 +482,10 @@ p{margin:0}
   .brand img,.site-header.is-stuck .brand img{width:166px}
   .header-tools{margin-left:auto}
 }
+
+/* ---- embedded method demo ---------------------------------------------- */
+#demo .demo-note{
+  margin:1.4rem 0 1.5rem;padding-left:.9rem;border-left:2px solid var(--tint);
+  font-size:.86rem;line-height:1.65;color:var(--ink-3);max-width:76ch;
+}
+#infera-demo{border-radius:var(--r-lg);overflow:hidden}

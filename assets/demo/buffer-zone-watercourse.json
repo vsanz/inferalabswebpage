@@ -1,0 +1,142 @@
+{
+  "id": "buffer-zone-watercourse",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "Banda de seguridad junto a una acequia",
+    "en": "Buffer strip beside an irrigation channel"
+  },
+  "profile": {
+    "crop": "Clementina (cítricos)",
+    "area_ha": 40,
+    "comarca": "Ribera Alta",
+    "irrigation": "drip",
+    "production": "conventional",
+    "watercourse_distance_m": 200,
+    "pest": "Delottococcus aberiae (cotonet)",
+    "harvest_in_days": 15
+  },
+  "question": {
+    "es": "Una de mis parcelas está a 200 m de una acequia. ¿Qué banda de seguridad debo respetar?",
+    "en": "One of my plots is 200 m from an irrigation channel. What buffer strip must I respect?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "Restricción espacial. La norma fija un mínimo general y la etiqueta del producto puede exigir más.",
+        "en": "A spatial constraint. The regulation sets a general minimum and the product label may require more."
+      },
+      "detail": {
+        "distancia_m": 200,
+        "minimo_general_m": 5
+      }
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "rd1311-a31",
+          "title": {
+            "es": "Contaminación difusa de las masas de agua",
+            "en": "Diffuse contamination of water bodies"
+          },
+          "authority": "BOE",
+          "ref": "RD 1311/2012, artículo 31",
+          "url": "https://www.boe.es/eli/es/rd/2012/09/14/1311",
+          "as_of": "2025-12-19",
+          "snippet": {
+            "es": "se respetará una banda de seguridad mínima, con respecto a las masas de agua superficial, de 5 metros, sin perjuicio de que deba dejarse una banda mayor, cuando así se establezca en la autorización y figure en la etiqueta del producto fitosanitario utilizado. No quedan afectados por este requisito los cultivos que se…",
+            "en": "se respetará una banda de seguridad mínima, con respecto a las masas de agua superficial, de 5 metros, sin perjuicio de que deba dejarse una banda mayor, cuando así se establezca en la autorización y figure en la etiqueta del producto fitosanitario utilizado. No quedan afectados por este requisito los cultivos que se…"
+          },
+          "used": true
+        },
+        {
+          "id": "rd1311-a32",
+          "title": {
+            "es": "Contaminación puntual de las masas de agua",
+            "en": "Point-source contamination of water bodies"
+          },
+          "authority": "BOE",
+          "ref": "RD 1311/2012, artículo 32",
+          "url": "https://www.boe.es/eli/es/rd/2012/09/14/1311",
+          "as_of": "2025-12-19",
+          "snippet": {
+            "es": "No llenar los depósitos de los equipos de aplicación directamente desde los pozos o puntos de almacenamiento de agua, ni desde un cauce de agua, excepto en el caso de que se utilicen equipos con dispositivos antirretorno o cuando el punto de captación esté más alto que la boca de llenado. b) Los…",
+            "en": "No llenar los depósitos de los equipos de aplicación directamente desde los pozos o puntos de almacenamiento de agua, ni desde un cauce de agua, excepto en el caso de que se utilicen equipos con dispositivos antirretorno o cuando el punto de captación esté más alto que la boca de llenado. b) Los…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "La banda de seguridad mínima frente a masas de agua superficial es de 5 metros, y puede ser mayor si así lo establece la autorización del producto y figura en su etiqueta.",
+            "en": "The minimum buffer strip to surface water bodies is 5 metres, and may be larger where the product authorisation establishes it and it appears on the label."
+          },
+          "citations": [
+            {
+              "source_id": "rd1311-a31",
+              "locator": "art. 31.2",
+              "cited_text": {
+                "es": "se respetará una banda de seguridad mínima, con respecto a las masas de agua superficial, de 5 metros, sin perjuicio de que deba dejarse una banda mayor, cuando así se establezca en la autorización y figure en la etiqueta del producto fitosanitario utilizado. No quedan afectados por este requisito…",
+                "en": "se respetará una banda de seguridad mínima, con respecto a las masas de agua superficial, de 5 metros, sin perjuicio de que deba dejarse una banda mayor, cuando así se establezca en la autorización y figure en la etiqueta del producto fitosanitario utilizado. No quedan afectados por este requisito…"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "A 200 m, el mínimo general se cumple con holgura. Lo que sigue siendo obligatorio es comprobar la etiqueta del producto concreto, porque puede exigir una banda mayor.",
+            "en": "At 200 m the general minimum is met comfortably. What remains obligatory is checking the specific product label, which may require a wider strip."
+          },
+          "citations": [
+            {
+              "source_id": "rd1311-a31",
+              "locator": "art. 31.2",
+              "cited_text": {
+                "es": "sin perjuicio de que deba dejarse una banda mayor, cuando así se establezca en la autorización y figure en la etiqueta del producto fitosanitario utilizado. No quedan afectados por este requisito los…",
+                "en": "sin perjuicio de que deba dejarse una banda mayor, cuando así se establezca en la autorización y figure en la etiqueta del producto fitosanitario utilizado. No quedan afectados por este requisito los…"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "La distancia no exime de las medidas contra contaminación puntual: no llenar depósitos directamente desde un cauce sin dispositivo antirretorno, y cubrir los pozos de la parcela tratada.",
+            "en": "Distance does not exempt from point-source measures: do not fill tanks directly from a watercourse without a non-return device, and cover wells in the treated plot."
+          },
+          "citations": [
+            {
+              "source_id": "rd1311-a32",
+              "locator": "art. 32.a)",
+              "cited_text": {
+                "es": "No llenar los depósitos de los equipos de aplicación directamente desde los pozos o puntos de almacenamiento de agua, ni desde un cauce de agua, excepto en el caso de que se utilicen equipos con dispositivos antirretorno o cuando el punto de captación esté más alto que la boca de llenado. b) Los…",
+                "en": "No llenar los depósitos de los equipos de aplicación directamente desde los pozos o puntos de almacenamiento de agua, ni desde un cauce de agua, excepto en el caso de que se utilicen equipos con dispositivos antirretorno o cuando el punto de captación esté más alto que la boca de llenado. b) Los…"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "high",
+      "reason": {
+        "es": "El mínimo y las prácticas obligatorias están fijados en norma estatal consolidada y no dependen del perfil.",
+        "en": "The minimum and the mandatory practices are set in consolidated national law and do not depend on the profile."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "BOE — RD 1311/2012 (texto consolidado)",
+      "as_of": "2025-12-19"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}
