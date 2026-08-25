@@ -81,6 +81,12 @@
       this.root.appendChild(sw);
     }
 
+    /* Each vertical asks its own question. A single headline above both was
+       simply false once the reader switched sector. */
+    var vq = this.verticals && this.verticals[this.vindex] &&
+             this.verticals[this.vindex].question;
+    if (vq) this.root.appendChild(el('p', 'idemo-question', t(vq, this.lang)));
+
 
     /* status banner — never hidden while content is unvalidated */
     if (tr.status !== 'validated') {

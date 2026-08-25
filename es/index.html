@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="../assets/css/site.css">
 <link rel="stylesheet" href="../assets/css/demo.css">
 <script src="../assets/js/demo.js" defer></script>
-<script>window.addEventListener("DOMContentLoaded",function(){InferaDemo.mount("#infera-demo",{verticals:[{"id": "ai-act", "label": {"es": "Reglamento de IA", "en": "AI Act"}, "scenarios": ["rol-proveedor-o-responsable", "practicas-prohibidas", "es-alto-riesgo", "que-aplica-y-cuando", "me-pueden-multar-en-espana", "deberiamos-seguir-usandolo"]}, {"id": "agri", "label": {"es": "Normativa fitosanitaria", "en": "Plant protection rules"}, "scenarios": ["cotonet-authorised-products", "safety-interval-before-harvest", "buffer-zone-watercourse", "field-logbook-obligations", "organic-conversion-conflict", "resistance-strategy"]}]});});</script>
+<script>window.addEventListener("DOMContentLoaded",function(){InferaDemo.mount("#infera-demo",{verticals:[{"id": "ai-act", "label": {"es": "Reglamento de IA", "en": "AI Act"}, "question": {"es": "¿Está tu empresa lista para el Reglamento de IA?", "en": "Is your company ready for the AI Act?"}, "scenarios": ["rol-proveedor-o-responsable", "practicas-prohibidas", "es-alto-riesgo", "que-aplica-y-cuando", "me-pueden-multar-en-espana", "deberiamos-seguir-usandolo"]}, {"id": "agri", "label": {"es": "Normativa fitosanitaria", "en": "Plant protection rules"}, "question": {"es": "¿Qué normativa me aplica en mi explotación?", "en": "Which rules apply to my holding?"}, "scenarios": ["cotonet-authorised-products", "safety-interval-before-harvest", "buffer-zone-watercourse", "field-logbook-obligations", "organic-conversion-conflict", "resistance-strategy"]}]});});</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -312,10 +312,10 @@
   <section class="section section-alt" id="demo">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>¿Está tu empresa lista para el Reglamento de IA?</h2>
-        <p>Pruébalo aquí. Cada respuesta enlaza con el artículo del que sale, dice si esa obligación ya rige, si regirá en una fecha cierta o si todavía es un proyecto de ley, y se detiene cuando la pregunta necesita criterio humano. Debajo puedes cambiar a un cuerpo normativo completamente distinto y ver el mismo método trabajando igual. Es una demostración, no un servicio de asesoramiento.</p>
+        <h2>Una IA que enseña de dónde sale cada respuesta</h2>
+        <p>Cada afirmación enlaza con el artículo o el registro oficial del que sale, y con la fecha de esos datos. Marca si una obligación ya rige, si regirá en una fecha cierta o si todavía es un proyecto de ley. Y cuando la pregunta necesita criterio humano, se detiene en lugar de responder por responder. Es una demostración, no un servicio de asesoramiento.</p>
       </div>
-      <p class="demo-vertical-note">Elige el ámbito</p>
+      <p class="demo-vertical-note">Dos cuerpos normativos sin relación entre sí, el mismo método en ambos</p>
       <div id="infera-demo" class="reveal"></div>
       <p class="demo-note">Las respuestas están calculadas de antemano sobre el Reglamento (UE) 2024/1689 consolidado a 27 de julio de 2026, el BOE y el registro oficial del MAPA. Ninguna ha sido validada por un experto todavía, y así se indica en la propia demostración.</p>
       <a class="btn btn-secondary" href="?sector=regulated-compliance#contact">Contáctanos si quieres hablar de un sistema así para tu sector</a>
