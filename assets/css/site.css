@@ -496,7 +496,3 @@ p{margin:0}
 .js #infera-demo{min-height:1485px}
 @media (max-width:900px){.js #infera-demo{min-height:1820px}}
 @media (max-width:560px){.js #infera-demo{min-height:2970px}}
-#demo .demo-vertical-note{
-  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:.9rem;
-}
