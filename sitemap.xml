@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://inferalabs.es/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://inferalabs.es/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://inferalabs.es/"/>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -14,7 +14,21 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://inferalabs.es/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://inferalabs.es/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://inferalabs.es/"/>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://inferalabs.es/research/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://inferalabs.es/research/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://inferalabs.es/es/investigacion/"/>
+    <lastmod>2026-08-25</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://inferalabs.es/es/investigacion/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://inferalabs.es/research/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://inferalabs.es/es/investigacion/"/>
+    <lastmod>2026-08-25</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>
