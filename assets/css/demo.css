@@ -186,3 +186,25 @@
   font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.25;letter-spacing:-.02em;
   color:var(--ink);margin:.2rem 0 1.1rem;
 }
+
+/* --- answer-first layout ------------------------------------------------- */
+.idemo-head{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin:.2rem 0 1.1rem}
+.idemo-head .idemo-question{margin:0;flex:1 1 20rem}
+.idemo-context{
+  display:block;margin-top:.6rem;padding-top:.55rem;border-top:1px solid var(--line);
+  font-size:.83rem;line-height:1.5;color:var(--ink-3);
+}
+.idemo-disclose{
+  font:inherit;font-size:.86rem;font-weight:500;cursor:pointer;margin-top:.85rem;
+  background:transparent;border:1px solid var(--line-2);border-radius:999px;
+  padding:.45rem 1rem;color:var(--ink-2);
+  transition:border-color .16s ease,color .16s ease;
+}
+.idemo-disclose:hover{border-color:var(--accent);color:var(--accent)}
+.idemo-disclose::after{content:" ↓";font-family:var(--mono)}
+.idemo-disclose[aria-expanded="true"]::after{content:" ↑"}
+.idemo-working{margin-top:.7rem}
+.idemo-notice{color:var(--warn)}
+/* the answer is the hero now, so give it a little more presence */
+.idemo-steps > .idemo-step:first-child{border-left:3px solid var(--accent)}
+.idemo-step.refusal:first-child{border-left-color:var(--stop)}

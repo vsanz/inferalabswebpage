@@ -493,6 +493,6 @@ p{margin:0}
    already jumped to an anchor, so ?sector=...#contact landed on
    Fundadores. Measured at 1200/768/390px. */
 #infera-demo{border-radius:var(--r-lg);overflow:hidden}
-.js #infera-demo{min-height:1485px}
-@media (max-width:900px){.js #infera-demo{min-height:1820px}}
-@media (max-width:560px){.js #infera-demo{min-height:2970px}}
+.js #infera-demo{min-height:1030px}
+@media (max-width:900px){.js #infera-demo{min-height:1215px}}
+@media (max-width:560px){.js #infera-demo{min-height:1790px}}

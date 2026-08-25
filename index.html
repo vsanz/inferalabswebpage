@@ -33,7 +33,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <link rel="stylesheet" href="/assets/css/site.css">
-
+<link rel="stylesheet" href="/assets/css/demo.css">
+<script src="/assets/js/demo.js" defer></script>
+<script>window.addEventListener("DOMContentLoaded",function(){InferaDemo.mount("#infera-demo",{verticals:[{"id": "ai-act", "label": {"es": "Reglamento de IA", "en": "AI Act"}, "question": {"es": "¿Está tu empresa lista para el Reglamento de IA?", "en": "Is your company ready for the AI Act?"}, "scenarios": ["rol-proveedor-o-responsable", "practicas-prohibidas", "es-alto-riesgo", "que-aplica-y-cuando", "me-pueden-multar-en-espana", "deberiamos-seguir-usandolo"]}, {"id": "agri", "label": {"es": "Normativa fitosanitaria", "en": "Plant protection rules"}, "question": {"es": "¿Qué normativa me aplica en mi explotación?", "en": "Which rules apply to my holding?"}, "scenarios": ["cotonet-authorised-products", "safety-interval-before-harvest", "buffer-zone-watercourse", "field-logbook-obligations", "organic-conversion-conflict", "resistance-strategy"]}]});});</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -96,6 +98,7 @@
         <a href="#sectors">Sectors</a>
         <a href="#approach">Technology</a>
         <a href="#governance">Governance</a>
+        <a href="#demo">Demos</a>
         <a href="#research">Research</a>
         <a href="#founders">Founders</a>
         <a href="#training">Training</a>
@@ -305,6 +308,18 @@
     </div>
   </section>
 
+
+  <section class="section section-alt" id="demo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>A traceable, specialised AI</h2>
+        <p>Every claim links to the article or official register it came from, and to the date of that data. It marks whether an obligation already binds you, whether it will bind you on a set date, or whether it is still only a bill. And when a question needs human judgement it stops instead of answering for the sake of it. <em>This is a demonstration, not an advisory service.</em></p>
+      </div>
+      <div id="infera-demo" class="reveal"></div>
+      <p class="demo-note">The answers are computed in advance from Regulation (EU) 2024/1689 as consolidated on 27 July 2026, from the BOE and from Spain's official plant protection register. None has been validated by an expert yet, and the demonstration says so.</p>
+      <a class="btn btn-secondary" href="?sector=regulated-compliance#contact">Talk to us about a system like this for your sector</a>
+    </div>
+  </section>
 
   <section class="section" id="research">
     <div class="wrap">
@@ -549,7 +564,7 @@
             <li><a href="#sectors">Sectors</a></li>
             <li><a href="#approach">Technology</a></li>
             <li><a href="#governance">Governance</a></li>
-            <li><a href="#research">Research</a></li>
+            <li><a href="#demo">Demos</a></li>
         </ul>
       </div>
       <div class="footer-col">

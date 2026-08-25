@@ -6,7 +6,8 @@
   'use strict';
 
   var LABELS = {
-    es: { in_force:'EN VIGOR', scheduled:'A PARTIR DE', bill:'PROYECTO DE LEY — NO VIGENTE',
+    es: { showWork:'Ver cómo lo ha resuelto', hideWork:'Ocultar el proceso',
+          context:'Supuesto', in_force:'EN VIGOR', scheduled:'A PARTIR DE', bill:'PROYECTO DE LEY — NO VIGENTE',
           parse:'Interpretación', retrieve:'Fuentes consultadas', answer:'Respuesta',
           refusal:'No puedo responder a esto', confidence:'Confianza',
           question:'Consulta', used:'usada', unused:'no usada',
@@ -14,7 +15,8 @@
           validated:'Validado por', notValidated:'sin validar', asOf:'datos a',
           placeholder:'Demostración del método. Contenido regulatorio pendiente de generar. No constituye asesoramiento.',
           unvalidated:'Demostración del método. Cada afirmación se cita literalmente contra su fuente oficial, pero todavía no ha sido validada por un experto. No constituye asesoramiento.' },
-    en: { in_force:'IN FORCE', scheduled:'FROM', bill:'BILL — NOT YET LAW',
+    en: { showWork:'See how it got there', hideWork:'Hide the working',
+          context:'Case', in_force:'IN FORCE', scheduled:'FROM', bill:'BILL — NOT YET LAW',
           parse:'Interpretation', retrieve:'Sources consulted', answer:'Answer',
           refusal:'I can’t answer this', confidence:'Confidence',
           question:'Query', used:'used', unused:'not used',
@@ -85,27 +87,17 @@
        simply false once the reader switched sector. */
     var vq = this.verticals && this.verticals[this.vindex] &&
              this.verticals[this.vindex].question;
-    if (vq) this.root.appendChild(el('p', 'idemo-question', t(vq, this.lang)));
+    if (vq) {
+      var head = el('div', 'idemo-head');
+      head.appendChild(el('p', 'idemo-question', t(vq, this.lang)));
+      head.appendChild(this.langToggle());
+      this.root.appendChild(head);
+    }
 
 
     /* status banner — never hidden while content is unvalidated */
-    if (tr.status !== 'validated') {
-      var bar = el('div', 'idemo-bar');
-      bar.appendChild(el('b', null, tr.status === 'placeholder' ? '●' : '○'));
-      bar.appendChild(el('span', null,
-        L(tr.status === 'placeholder' ? 'placeholder' : 'unvalidated')));
-      var sp = el('span', 'spacer');
-      bar.appendChild(sp);
-      bar.appendChild(this.langToggle());
-      this.root.appendChild(bar);
-    }
 
     /* profile chips */
-    var prof = el('div', 'idemo-profile');
-    Object.keys(tr.profile).forEach(function (k) {
-      prof.appendChild(el('span', 'idemo-chip', k.replace(/_/g, ' ') + ': ' + tr.profile[k]));
-    });
-    this.root.appendChild(prof);
 
     /* scenario tabs */
     var tabs = el('div', 'idemo-tabs');
@@ -115,7 +107,7 @@
       b.setAttribute('role', 'tab');
       b.setAttribute('aria-selected', String(i === self.index));
       b.appendChild(el('span', 'n', String(i + 1).padStart(2, '0')));
-      b.appendChild(document.createTextNode(t(x.title, self.lang)));
+      b.appendChild(document.createTextNode(t(x.tab || x.title, self.lang)));
       b.addEventListener('click', function () {
         self.index = i;
         if (window.history && window.history.replaceState) {
@@ -131,18 +123,49 @@
     var q = el('div', 'idemo-q');
     q.appendChild(el('span', 'lbl', L('question')));
     q.appendChild(document.createTextNode(t(tr.question, this.lang)));
+    var ctx = Object.keys(tr.profile).map(function (k) { return tr.profile[k]; }).join(' · ');
+    q.appendChild(el('span', 'idemo-context', L('context') + ': ' + ctx));
     this.root.appendChild(q);
 
     /* steps */
+    /* The answer comes first. Ordered the other way round -- interpretation,
+       sources, then answer -- the only thing a reader wants was seventh and
+       below the fold, which made a demo about regulatory burden feel like one. */
     var steps = el('div', 'idemo-steps');
-    tr.steps.forEach(function (s) { steps.appendChild(self.step(s, tr)); });
+    tr.steps.filter(function (x) { return x.type === 'answer' || x.type === 'refusal'; })
+      .forEach(function (x) { steps.appendChild(self.step(x, tr)); });
     this.root.appendChild(steps);
+
+    var working = tr.steps.filter(function (x) {
+      return x.type === 'parse' || x.type === 'retrieve' || x.type === 'confidence';
+    });
+    if (working.length) {
+      var open = false;
+      var btn = el('button', 'idemo-disclose', L('showWork'));
+      btn.setAttribute('aria-expanded', 'false');
+      var panel = el('div', 'idemo-steps idemo-working');
+      panel.hidden = true;
+      working.forEach(function (x) { panel.appendChild(self.step(x, tr)); });
+      btn.addEventListener('click', function () {
+        open = !open;
+        panel.hidden = !open;
+        btn.textContent = L(open ? 'hideWork' : 'showWork');
+        btn.setAttribute('aria-expanded', String(open));
+        if (open) self.reveal(panel);
+      });
+      this.root.appendChild(btn);
+      this.root.appendChild(panel);
+    }
 
     /* provenance footer */
     var foot = el('div', 'idemo-foot');
     (tr.source_versions || []).forEach(function (v) {
       foot.appendChild(el('span', null, v.name + (v.version ? ' v' + v.version : '') + ' · ' + L('asOf') + ' ' + v.as_of));
     });
+    if (tr.status !== 'validated') {
+      foot.appendChild(el('span', 'idemo-notice',
+        L(tr.status === 'placeholder' ? 'placeholder' : 'unvalidated')));
+    }
     var val = el('span', tr.validated_by ? null : 'empty');
     val.textContent = L('validated') + ': ' + (tr.validated_by || '— ' + L('notValidated'));
     foot.appendChild(val);

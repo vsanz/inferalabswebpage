@@ -90,5 +90,9 @@
     }
   ],
   "validated_by": null,
-  "generated_at": "2026-08-25"
+  "generated_at": "2026-08-25",
+  "tab": {
+    "es": "¿Seguimos con él?",
+    "en": "Keep using it?"
+  }
 }

@@ -172,5 +172,9 @@
     }
   ],
   "validated_by": null,
-  "generated_at": "2026-08-25"
+  "generated_at": "2026-08-25",
+  "tab": {
+    "es": "Qué me aplica y cuándo",
+    "en": "What applies, and when"
+  }
 }

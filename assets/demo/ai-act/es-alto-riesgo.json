@@ -93,5 +93,9 @@
     }
   ],
   "validated_by": null,
-  "generated_at": "2026-08-25"
+  "generated_at": "2026-08-25",
+  "tab": {
+    "es": "¿Alto riesgo?",
+    "en": "High-risk?"
+  }
 }
