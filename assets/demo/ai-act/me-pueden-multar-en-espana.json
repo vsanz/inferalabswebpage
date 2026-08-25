@@ -1,0 +1,116 @@
+{
+  "id": "me-pueden-multar-en-espana",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "¿Me pueden multar en España?",
+    "en": "Can I be fined in Spain?"
+  },
+  "profile": {
+    "pais": "España",
+    "empleados": 180,
+    "sector": "industria",
+    "sistema_1": "cribado automático de currículums (desarrollado internamente)",
+    "sistema_2": "chatbot de atención al cliente",
+    "rol": "proveedor y responsable del despliegue"
+  },
+  "question": {
+    "es": "He leído que las multas llegan a 35 millones. ¿Me pueden sancionar en España ahora mismo?",
+    "en": "I have read fines reach 35 million. Can I be sanctioned in Spain right now?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "Hay que separar dos cosas que la prensa junta: la obligación europea, que se aplica sola, y el régimen sancionador nacional, que cada Estado debe aprobar.",
+        "en": "Two things the press merges must be separated: the European obligation, which applies by itself, and the national penalty regime, which each State must enact."
+      },
+      "detail": {}
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "a99",
+          "title": {
+            "es": "Sanciones",
+            "en": "Penalties"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reglamento (UE) 2024/1689, art. 99",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es",
+          "as_of": "2026-07-27",
+          "snippet": {
+            "es": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas las medidas necesarias para garantizar que se aplican de…",
+            "en": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas las medidas necesarias para garantizar que se aplican de…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "Las obligaciones del Reglamento os vinculan desde ya: es un reglamento europeo y se aplica directamente, sin necesidad de norma española que lo transponga.",
+            "en": "The Regulation's obligations bind you already: it is an EU regulation and applies directly, with no Spanish transposing act needed."
+          },
+          "citations": [
+            {
+              "source_id": "a99",
+              "locator": "art. 99",
+              "cited_text": {
+                "es": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas las medidas…",
+                "en": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas las medidas…"
+              }
+            }
+          ],
+          "when": {
+            "status": "in_force",
+            "date": "2026-08-02"
+          }
+        },
+        {
+          "text": {
+            "es": "Pero la cifra de 35 millones sale del propio Reglamento, no de una ley española. El artículo 99 encarga a los Estados miembros fijar su régimen sancionador, y España todavía no lo ha aprobado: sigue en el Congreso.",
+            "en": "But the 35 million figure comes from the Regulation itself, not from a Spanish law. Article 99 tasks Member States with setting their penalty regime, and Spain has not yet enacted it: it remains before Congress."
+          },
+          "citations": [
+            {
+              "source_id": "a99",
+              "locator": "art. 99.1",
+              "cited_text": {
+                "es": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas las medidas…",
+                "en": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas las medidas…"
+              }
+            }
+          ],
+          "when": {
+            "status": "bill",
+            "note": {
+              "es": "Titulares de mayo como «el Gobierno regula la IA» se refieren a la aprobación de un proyecto de ley, no a una ley en vigor.",
+              "en": "May headlines such as 'the Government regulates AI' refer to approving a bill, not to a law in force."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "medium",
+      "reason": {
+        "es": "El corpus cubre el Reglamento, no otros regímenes sancionadores que sí puedan alcanzaros hoy por otras vías, como protección de datos. No afirmo que no exista riesgo sancionador: afirmo que el régimen específico de IA en España no está aprobado.",
+        "en": "The corpus covers the Regulation, not other penalty regimes that may already reach you by other routes, such as data protection. I am not claiming there is no sanction risk: I am claiming the Spanish AI-specific regime is not yet enacted."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "EUR-Lex — Reglamento (UE) 2024/1689, texto consolidado",
+      "as_of": "2026-07-27"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

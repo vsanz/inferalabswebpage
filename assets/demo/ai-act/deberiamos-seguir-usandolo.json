@@ -1,0 +1,94 @@
+{
+  "id": "deberiamos-seguir-usandolo",
+  "status": "generated",
+  "kind": "refusal",
+  "title": {
+    "es": "¿Deberíamos seguir usándolo?",
+    "en": "Should we keep using it?"
+  },
+  "profile": {
+    "pais": "España",
+    "empleados": 180,
+    "sector": "industria",
+    "sistema_1": "cribado automático de currículums (desarrollado internamente)",
+    "sistema_2": "chatbot de atención al cliente",
+    "rol": "proveedor y responsable del despliegue"
+  },
+  "question": {
+    "es": "Visto todo esto, ¿nos merece la pena seguir con el cribado automático o lo retiramos?",
+    "en": "Given all this, is the automated screening worth keeping or should we withdraw it?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "La pregunta es de decisión empresarial y jurídica, no de consulta normativa.",
+        "en": "This is a business and legal decision, not a regulatory lookup."
+      },
+      "detail": {}
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "an3",
+          "title": {
+            "es": "Sistemas de alto riesgo",
+            "en": "High-risk systems"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reglamento (UE) 2024/1689, anexo III",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es",
+          "as_of": "2026-07-27",
+          "snippet": {
+            "es": "Empleo, gestión de los trabajadores y acceso al autoempleo: a) Sistemas de IA destinados a ser utilizados para la contratación o la selec­ ción de personas físicas, en particular para publicar…",
+            "en": "Empleo, gestión de los trabajadores y acceso al autoempleo: a) Sistemas de IA destinados a ser utilizados para la contratación o la selec­ ción de personas físicas, en particular para publicar…"
+          },
+          "used": false
+        }
+      ]
+    },
+    {
+      "type": "refusal",
+      "reason": {
+        "es": "No puedo responder a esto. Es una decisión que combina riesgo jurídico, coste de adaptación y criterio de negocio, y ninguna de las tres cosas está en el texto de la norma.",
+        "en": "I can't answer this. It combines legal risk, cost of adaptation and business judgement, and none of the three is in the text of the law."
+      },
+      "why_not_answerable": [
+        {
+          "es": "depende de vuestro apetito de riesgo y de vuestros plazos internos, que no constan en ninguna fuente",
+          "en": "it depends on your risk appetite and internal timelines, which are in no source"
+        },
+        {
+          "es": "exige valorar si adaptar el sistema sale más caro que sustituirlo, lo cual es un cálculo vuestro",
+          "en": "it requires judging whether adapting the system costs more than replacing it, which is your calculation"
+        },
+        {
+          "es": "retirar un sistema de selección tiene implicaciones laborales que exceden el Reglamento de IA",
+          "en": "withdrawing a recruitment system has employment-law implications beyond the AI Act"
+        }
+      ],
+      "escalate_to": "asesoría jurídica",
+      "what_it_could_do": {
+        "es": "Sí puedo listaros exactamente qué obligaciones tendréis desde el 2 de diciembre de 2027 y qué artículos las imponen, para que vuestro asesor decida con eso delante.",
+        "en": "What I can do is list exactly which obligations you will have from 2 December 2027 and which articles impose them, so your adviser can decide with that in front of them."
+      }
+    },
+    {
+      "type": "confidence",
+      "level": "low",
+      "reason": {
+        "es": "Fuera del alcance del sistema por diseño.",
+        "en": "Out of the system's scope by design."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "EUR-Lex — Reglamento (UE) 2024/1689, texto consolidado",
+      "as_of": "2026-07-27"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

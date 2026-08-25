@@ -1,0 +1,93 @@
+{
+  "id": "rol-proveedor-o-responsable",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "¿Soy proveedor o responsable del despliegue?",
+    "en": "Provider or deployer?"
+  },
+  "profile": {
+    "pais": "España",
+    "empleados": 180,
+    "sector": "industria",
+    "sistema_1": "cribado automático de currículums (desarrollado internamente)",
+    "sistema_2": "chatbot de atención al cliente",
+    "rol": "proveedor y responsable del despliegue"
+  },
+  "question": {
+    "es": "Hemos desarrollado nosotros el sistema de cribado de currículums y lo usamos internamente. ¿Qué somos según el Reglamento?",
+    "en": "We built the CV-screening system ourselves and use it internally. What are we under the Regulation?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "Desarrollar y además usar el sistema activa las dos definiciones del artículo 3 a la vez.",
+        "en": "Building and also using the system triggers both definitions in Article 3 at once."
+      },
+      "detail": {}
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "a3",
+          "title": {
+            "es": "Definiciones",
+            "en": "Definitions"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reglamento (UE) 2024/1689, art. 3",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es",
+          "as_of": "2026-07-27",
+          "snippet": {
+            "es": "«proveedor»: una persona física o jurídica, autoridad pública, órgano u organismo que desarrolle un sistema de IA o un modelo de IA de uso general o para el que se desarrolle un sistema de IA o un modelo de IA de uso general y lo intro­ duzca en el mercado o ponga en servicio el sistema de IA con su propio nombre o marca, previo pago o gratuitamente; 4) «responsable del…",
+            "en": "«proveedor»: una persona física o jurídica, autoridad pública, órgano u organismo que desarrolle un sistema de IA o un modelo de IA de uso general o para el que se desarrolle un sistema de IA o un modelo de IA de uso general y lo intro­ duzca en el mercado o ponga en servicio el sistema de IA con su propio nombre o marca, previo pago o gratuitamente; 4) «responsable del…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "El artículo 3 define «proveedor» como quien desarrolla un sistema de IA y lo introduce en el mercado o lo pone en servicio bajo su propio nombre, y «responsable del despliegue» como quien lo utiliza bajo su propia autoridad. Al haberlo desarrollado y usarlo internamente, sois ambas cosas.",
+            "en": "Article 3 defines a provider as one who develops an AI system and places it on the market or puts it into service under their own name, and a deployer as one who uses it under their own authority. Having built it and using it internally, you are both."
+          },
+          "citations": [
+            {
+              "source_id": "a3",
+              "locator": "art. 3",
+              "cited_text": {
+                "es": "«proveedor»: una persona física o jurídica, autoridad pública, órgano u organismo que desarrolle un sistema de IA o un modelo de IA de uso general o para el que se desarrolle un sistema de IA o un modelo de IA de uso general y lo intro­ duzca en el mercado o ponga en servicio el sistema de IA con su propio nombre o marca, previo pago o…",
+                "en": "«proveedor»: una persona física o jurídica, autoridad pública, órgano u organismo que desarrolle un sistema de IA o un modelo de IA de uso general o para el que se desarrolle un sistema de IA o un modelo de IA de uso general y lo intro­ duzca en el mercado o ponga en servicio el sistema de IA con su propio nombre o marca, previo pago o…"
+              }
+            }
+          ],
+          "when": {
+            "status": "in_force",
+            "date": "2025-02-02"
+          }
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "high",
+      "reason": {
+        "es": "Las definiciones son literales y no dependen del sector.",
+        "en": "The definitions are literal and sector-independent."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "EUR-Lex — Reglamento (UE) 2024/1689, texto consolidado",
+      "as_of": "2026-07-27"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

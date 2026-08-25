@@ -153,3 +153,29 @@
   .idemo-tab{font-size:.8rem;padding:.4rem .7rem}
   .idemo-srcrow{grid-template-columns:1fr}
 }
+
+/* what applies now vs what is only expected to apply */
+.idemo-when{
+  display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;
+  padding:.2rem .5rem;border-radius:4px;margin-bottom:.45rem;font-weight:600;
+}
+.idemo-when.in_force{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.idemo-when.scheduled{background:var(--warn-bg);color:var(--warn)}
+.idemo-when.bill{background:var(--stop-bg);color:var(--stop)}
+.idemo-when-note{
+  display:block;font-size:.78rem;color:var(--ink-3);margin:-.2rem 0 .4rem;line-height:1.5;
+}
+
+/* sector switcher: the same method over two bodies of law */
+.idemo-verticals{display:inline-flex;gap:.25rem;padding:.25rem;margin-bottom:1rem;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:999px}
+.idemo-vertical{
+  font:inherit;font-size:.85rem;font-weight:500;padding:.4rem 1rem;border:0;cursor:pointer;
+  background:transparent;color:var(--ink-2);border-radius:999px;transition:background-color .16s,color .16s;
+}
+.idemo-vertical:hover{color:var(--ink)}
+.idemo-vertical[aria-pressed="true"]{background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){
+  .idemo:not([data-theme="light"]) .idemo-vertical[aria-pressed="true"]{color:#08131A}
+}
+@media (max-width:520px){.idemo-verticals{display:flex;width:100%}.idemo-vertical{flex:1;padding:.4rem .5rem}}

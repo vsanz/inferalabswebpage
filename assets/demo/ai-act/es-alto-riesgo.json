@@ -1,0 +1,97 @@
+{
+  "id": "es-alto-riesgo",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "¿El cribado de currículums es de alto riesgo?",
+    "en": "Is CV screening high-risk?"
+  },
+  "profile": {
+    "pais": "España",
+    "empleados": 180,
+    "sector": "industria",
+    "sistema_1": "cribado automático de currículums (desarrollado internamente)",
+    "sistema_2": "chatbot de atención al cliente",
+    "rol": "proveedor y responsable del despliegue"
+  },
+  "question": {
+    "es": "¿Nuestro sistema de cribado de currículums es de alto riesgo?",
+    "en": "Is our CV-screening system high-risk?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "La clasificación se resuelve en el anexo III, no en el articulado.",
+        "en": "Classification is resolved in Annex III, not in the articles."
+      },
+      "detail": {}
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "an3",
+          "title": {
+            "es": "Sistemas de alto riesgo",
+            "en": "High-risk systems"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reglamento (UE) 2024/1689, anexo III",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es",
+          "as_of": "2026-07-27",
+          "snippet": {
+            "es": "Empleo, gestión de los trabajadores y acceso al autoempleo: a) Sistemas de IA destinados a ser utilizados para la contratación o la selec­ ción de personas físicas, en particular para publicar anuncios de empleo específicos, analizar y filtrar las solicitudes de empleo y evaluar a los candidatos b) Sistemas de IA destinados a ser utilizados para tomar…",
+            "en": "Empleo, gestión de los trabajadores y acceso al autoempleo: a) Sistemas de IA destinados a ser utilizados para la contratación o la selec­ ción de personas físicas, en particular para publicar anuncios de empleo específicos, analizar y filtrar las solicitudes de empleo y evaluar a los candidatos b) Sistemas de IA destinados a ser utilizados para tomar…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "Sí. El anexo III incluye, en su punto 4 sobre empleo, los sistemas destinados a la contratación o selección de personas físicas, en particular para analizar y filtrar solicitudes de empleo. Es exactamente vuestro caso.",
+            "en": "Yes. Annex III includes, under point 4 on employment, systems intended for recruitment or selection of natural persons, in particular to analyse and filter job applications. That is precisely your case."
+          },
+          "citations": [
+            {
+              "source_id": "an3",
+              "locator": "anexo III, punto 4 a)",
+              "cited_text": {
+                "es": "Empleo, gestión de los trabajadores y acceso al autoempleo: a) Sistemas de IA destinados a ser utilizados para la contratación o la selec­ ción de personas físicas, en particular para publicar anuncios de empleo específicos, analizar y filtrar las solicitudes de empleo y evaluar a los candidatos b) Sistemas de IA destinados a ser…",
+                "en": "Empleo, gestión de los trabajadores y acceso al autoempleo: a) Sistemas de IA destinados a ser utilizados para la contratación o la selec­ ción de personas físicas, en particular para publicar anuncios de empleo específicos, analizar y filtrar las solicitudes de empleo y evaluar a los candidatos b) Sistemas de IA destinados a ser…"
+              }
+            }
+          ],
+          "when": {
+            "status": "in_force",
+            "date": "2025-02-02",
+            "note": {
+              "es": "La clasificación ya rige. Las obligaciones que conlleva son otra cosa: ver el escenario siguiente.",
+              "en": "The classification already applies. The obligations it brings are another matter: see the next scenario."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "high",
+      "reason": {
+        "es": "El supuesto está descrito de forma casi literal en el anexo.",
+        "en": "The case is described almost literally in the annex."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "EUR-Lex — Reglamento (UE) 2024/1689, texto consolidado",
+      "as_of": "2026-07-27"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

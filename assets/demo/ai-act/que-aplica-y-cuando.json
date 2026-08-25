@@ -1,0 +1,176 @@
+{
+  "id": "que-aplica-y-cuando",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "Qué me aplica hoy y qué está por llegar",
+    "en": "What applies today and what is still coming"
+  },
+  "profile": {
+    "pais": "España",
+    "empleados": 180,
+    "sector": "industria",
+    "sistema_1": "cribado automático de currículums (desarrollado internamente)",
+    "sistema_2": "chatbot de atención al cliente",
+    "rol": "proveedor y responsable del despliegue"
+  },
+  "question": {
+    "es": "Tenemos el chatbot y el cribado de currículums. ¿Qué nos obliga ya y qué no todavía?",
+    "en": "We have the chatbot and the CV screening. What already binds us and what does not yet?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "Los dos sistemas caen en regímenes distintos y con fechas distintas. El artículo 113 fija el calendario, y el Omnibus lo modificó en julio.",
+        "en": "The two systems fall under different regimes with different dates. Article 113 sets the calendar, and the Omnibus amended it in July."
+      },
+      "detail": {
+        "chatbot": "transparencia",
+        "cribado": "alto riesgo, anexo III",
+        "norma_modificadora": "Reglamento (UE) 2026/1744"
+      }
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "a50",
+          "title": {
+            "es": "Obligaciones de transparencia",
+            "en": "Transparency obligations"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reglamento (UE) 2024/1689, art. 50",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es",
+          "as_of": "2026-07-27",
+          "snippet": {
+            "es": "destinados a interactuar directamente con personas físicas se diseñen y desarrollen de forma que las personas físicas de que se trate estén informadas de que están interactuando con un sistema de IA, excepto cuando resulte evidente desde el punto de vista de una persona física razonablemente informada, atenta y…",
+            "en": "destinados a interactuar directamente con personas físicas se diseñen y desarrollen de forma que las personas físicas de que se trate estén informadas de que están interactuando con un sistema de IA, excepto cuando resulte evidente desde el punto de vista de una persona física razonablemente informada, atenta y…"
+          },
+          "used": true
+        },
+        {
+          "id": "a113",
+          "title": {
+            "es": "Entrada en vigor y aplicación",
+            "en": "Entry into force and application"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reglamento (UE) 2024/1689, art. 113",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es",
+          "as_of": "2026-07-27",
+          "snippet": {
+            "es": "2 de diciembre de 2027 en lo que respecta a los sistemas de IA clasificados como de alto riesgo en virtud del artículo 6, apar­ tado 2, y el anexo III, y ii) 2 de agosto de 2028 en lo que respecta a los sistemas de IA clasificados como de alto riesgo en virtud del artículo 6, apar­ tado 1, y al…",
+            "en": "2 de diciembre de 2027 en lo que respecta a los sistemas de IA clasificados como de alto riesgo en virtud del artículo 6, apar­ tado 2, y el anexo III, y ii) 2 de agosto de 2028 en lo que respecta a los sistemas de IA clasificados como de alto riesgo en virtud del artículo 6, apar­ tado 1, y al…"
+          },
+          "used": true
+        },
+        {
+          "id": "a99",
+          "title": {
+            "es": "Sanciones",
+            "en": "Penalties"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reglamento (UE) 2024/1689, art. 99",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es",
+          "as_of": "2026-07-27",
+          "snippet": {
+            "es": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas las medidas…",
+            "en": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas las medidas…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "El chatbot ya os obliga. El artículo 50 exige informar a la persona de que está interactuando con un sistema de IA, y esa obligación es aplicable desde el 2 de agosto de 2026.",
+            "en": "The chatbot already binds you. Article 50 requires informing the person that they are interacting with an AI system, and that obligation has applied since 2 August 2026."
+          },
+          "citations": [
+            {
+              "source_id": "a50",
+              "locator": "art. 50.1",
+              "cited_text": {
+                "es": "destinados a interactuar directamente con personas físicas se diseñen y desarrollen de forma que las personas físicas de que se trate estén informadas de que están interactuando con un sistema de IA, excepto cuando resulte evidente desde el punto de vista de una persona física razonablemente…",
+                "en": "destinados a interactuar directamente con personas físicas se diseñen y desarrollen de forma que las personas físicas de que se trate estén informadas de que están interactuando con un sistema de IA, excepto cuando resulte evidente desde el punto de vista de una persona física razonablemente…"
+              }
+            }
+          ],
+          "when": {
+            "status": "in_force",
+            "date": "2026-08-02"
+          }
+        },
+        {
+          "text": {
+            "es": "El cribado de currículums está clasificado como de alto riesgo, pero las obligaciones que conlleva no os son exigibles todavía: el artículo 113, modificado por el Omnibus, las sitúa a partir del 2 de diciembre de 2027 para los sistemas del anexo III.",
+            "en": "CV screening is classified as high-risk, but the obligations it brings are not yet enforceable against you: Article 113, as amended by the Omnibus, sets them from 2 December 2027 for Annex III systems."
+          },
+          "citations": [
+            {
+              "source_id": "a113",
+              "locator": "art. 113 c) i)",
+              "cited_text": {
+                "es": "2 de diciembre de 2027 en lo que respecta a los sistemas de IA clasificados como de alto riesgo en virtud del artículo 6, apar­ tado 2, y el anexo III, y ii) 2 de agosto de 2028 en lo que respecta a los sistemas de IA clasificados como de alto riesgo en…",
+                "en": "2 de diciembre de 2027 en lo que respecta a los sistemas de IA clasificados como de alto riesgo en virtud del artículo 6, apar­ tado 2, y el anexo III, y ii) 2 de agosto de 2028 en lo que respecta a los sistemas de IA clasificados como de alto riesgo en…"
+              }
+            }
+          ],
+          "when": {
+            "status": "scheduled",
+            "date": "2027-12-02",
+            "note": {
+              "es": "Antes del Omnibus esta fecha era el 2 de agosto de 2026. Si alguien os dijo esa fecha, se basaba en el texto sin consolidar.",
+              "en": "Before the Omnibus this date was 2 August 2026. Anyone who told you that date was working from the unconsolidated text."
+            }
+          }
+        },
+        {
+          "text": {
+            "es": "Las multas concretas dependen de España. El artículo 99 encarga a cada Estado miembro establecer su régimen de sanciones, y el español sigue siendo un proyecto de ley en el Congreso.",
+            "en": "The specific fines depend on Spain. Article 99 tasks each Member State with establishing its penalty regime, and the Spanish one is still a bill before Congress."
+          },
+          "citations": [
+            {
+              "source_id": "a99",
+              "locator": "art. 99.1",
+              "cited_text": {
+                "es": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas…",
+                "en": "los Estados miembros establecerán el régimen de sanciones y otras medidas de garantía del cumplimiento, como multas administrati­ vas, advertencias o medidas no pecuniarias, aplicable a cualquier infrac­ ción del presente Reglamento que cometan los operadores y adoptarán todas…"
+              }
+            }
+          ],
+          "when": {
+            "status": "bill",
+            "note": {
+              "es": "Proyecto de Ley Orgánica para el buen uso y la gobernanza de la IA, en tramitación desde junio de 2026. No es derecho vigente.",
+              "en": "Organic Law bill on the good use and governance of AI, in parliamentary process since June 2026. Not law in force."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "medium",
+      "reason": {
+        "es": "Las fechas y las obligaciones se leen del texto consolidado. El estado del proyecto de ley español no procede del corpus, sino del seguimiento parlamentario, y conviene reconfirmarlo.",
+        "en": "Dates and obligations are read from the consolidated text. The status of the Spanish bill does not come from the corpus but from parliamentary tracking, and should be re-confirmed."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "EUR-Lex — Reglamento (UE) 2024/1689, texto consolidado",
+      "as_of": "2026-07-27"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}

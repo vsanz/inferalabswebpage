@@ -1,0 +1,93 @@
+{
+  "id": "practicas-prohibidas",
+  "status": "generated",
+  "kind": "answer",
+  "title": {
+    "es": "¿Hay algo que tengamos prohibido?",
+    "en": "Is anything we do prohibited?"
+  },
+  "profile": {
+    "pais": "España",
+    "empleados": 180,
+    "sector": "industria",
+    "sistema_1": "cribado automático de currículums (desarrollado internamente)",
+    "sistema_2": "chatbot de atención al cliente",
+    "rol": "proveedor y responsable del despliegue"
+  },
+  "question": {
+    "es": "En selección querríamos analizar el tono emocional de los candidatos en las entrevistas grabadas. ¿Se puede?",
+    "en": "In recruitment we would like to analyse candidates' emotional tone in recorded interviews. Is that allowed?"
+  },
+  "steps": [
+    {
+      "type": "parse",
+      "summary": {
+        "es": "Inferencia de emociones en un contexto laboral: cae directamente en la lista de prácticas prohibidas del artículo 5.",
+        "en": "Emotion inference in a workplace context falls directly in the prohibited practices of Article 5."
+      },
+      "detail": {}
+    },
+    {
+      "type": "retrieve",
+      "sources": [
+        {
+          "id": "a5",
+          "title": {
+            "es": "Prácticas de IA prohibidas",
+            "en": "Prohibited AI practices"
+          },
+          "authority": "EUR-Lex",
+          "ref": "Reglamento (UE) 2024/1689, art. 5",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es",
+          "as_of": "2026-07-27",
+          "snippet": {
+            "es": "inferir las emociones de una persona física en los lugares de trabajo y en los centros educativos, excepto cuando el sistema de IA esté destinado a ser instalado o introducido en el mercado por motivos médicos o de seguridad; g) la introducción en el mercado, la puesta en servicio para este fin específico o el uso de…",
+            "en": "inferir las emociones de una persona física en los lugares de trabajo y en los centros educativos, excepto cuando el sistema de IA esté destinado a ser instalado o introducido en el mercado por motivos médicos o de seguridad; g) la introducción en el mercado, la puesta en servicio para este fin específico o el uso de…"
+          },
+          "used": true
+        }
+      ]
+    },
+    {
+      "type": "answer",
+      "blocks": [
+        {
+          "text": {
+            "es": "No. El artículo 5 prohíbe expresamente inferir emociones de personas físicas en los lugares de trabajo, salvo por motivos médicos o de seguridad. La selección de personal no es ninguna de las dos excepciones.",
+            "en": "No. Article 5 expressly prohibits inferring emotions of natural persons in the workplace, except for medical or safety reasons. Recruitment is neither exception."
+          },
+          "citations": [
+            {
+              "source_id": "a5",
+              "locator": "art. 5.1 f)",
+              "cited_text": {
+                "es": "inferir las emociones de una persona física en los lugares de trabajo y en los centros educativos, excepto cuando el sistema de IA esté destinado a ser instalado o introducido en el mercado por motivos médicos o de seguridad; g) la introducción en el mercado, la puesta en servicio para este fin…",
+                "en": "inferir las emociones de una persona física en los lugares de trabajo y en los centros educativos, excepto cuando el sistema de IA esté destinado a ser instalado o introducido en el mercado por motivos médicos o de seguridad; g) la introducción en el mercado, la puesta en servicio para este fin…"
+              }
+            }
+          ],
+          "when": {
+            "status": "in_force",
+            "date": "2025-02-02"
+          }
+        }
+      ]
+    },
+    {
+      "type": "confidence",
+      "level": "high",
+      "reason": {
+        "es": "Prohibición expresa, en vigor desde febrero de 2025.",
+        "en": "An express prohibition, in force since February 2025."
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "name": "EUR-Lex — Reglamento (UE) 2024/1689, texto consolidado",
+      "as_of": "2026-07-27"
+    }
+  ],
+  "validated_by": null,
+  "generated_at": "2026-08-25"
+}
