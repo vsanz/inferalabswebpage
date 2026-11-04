@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>html,body{margin:0}body{font-size:14px}img{max-width:100%}[hidden]{display:none!important}.demo-switch{background:var(--ink);color:var(--surface);font-size:13px}.demo-switch .wrap{display:flex;gap:6px 18px;flex-wrap:wrap;align-items:center;padding-block:7px}.demo-switch a{color:var(--surface);opacity:.75;text-decoration:none}.demo-switch a[aria-current]{opacity:1;font-weight:600;text-decoration:underline;text-underline-offset:3px}</style>
+<title>Aforia Recintos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Aforia: simulación de multitudes en un recinto de fiestas o conciertos: empuje hacia el escenario, salida y evacuación.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an operator's console. The live plan of the square is the hero; controls sit in a rail on the left,
+   readouts under each map; below come the findings, the method and other venues. */
+:root {
+  --bg: #eef1f4;
+  --surface: #ffffff;
+  --ink: #15202b;
+  --muted: #5a6775;
+  --line: #d5dbe2;
+  --accent: #0e7c74;
+  --accent-ink: #ffffff;
+  --accent-soft: #d8efec;
+  --b: #7a4fd0;
+  --street: #fbfcfd;
+  --bldg: #cfd6de;
+  --bldg-edge: #b8c1cb;
+  --exit: #1f9d63;
+  --fire: #d1432b;
+  --plaza: #7b8a9a;
+  --dot0: #2b4f93;
+  --dot1: #e0a11b;
+  --dot2: #e2611c;
+  --dot3: #c41d3a;
+  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e141a; --surface: #151d26; --ink: #e5eaef; --muted: #93a1af; --line: #283340;
+    --accent: #34c7b6; --accent-ink: #062a26; --accent-soft: #123a37; --b: #b195f2;
+    --street: #1b242e; --bldg: #0b1015; --bldg-edge: #222c37; --exit: #2fbf7b; --fire: #f06a4f; --plaza: #6d7d8e;
+    --dot0: #7fa8f5; --dot1: #f2c14b; --dot2: #f58a45; --dot3: #ff4d6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e141a; --surface: #151d26; --ink: #e5eaef; --muted: #93a1af; --line: #283340;
+  --accent: #34c7b6; --accent-ink: #062a26; --accent-soft: #123a37; --b: #b195f2;
+  --street: #1b242e; --bldg: #0b1015; --bldg-edge: #222c37; --exit: #2fbf7b; --fire: #f06a4f; --plaza: #6d7d8e;
+  --dot0: #7fa8f5; --dot1: #f2c14b; --dot2: #f58a45; --dot3: #ff4d6a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { background: var(--bg); color: var(--ink); }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Top bar */
+.top { border-bottom: 1px solid var(--line); background: var(--surface); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.brand svg { width: 30px; height: 30px; }
+.brand b { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+.top nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.top nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
+.top nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero .wrap { padding-block: 40px 24px; display: grid; gap: 14px; }
+.hero h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.05; font-weight: 700; max-width: 18ch; }
+.hero p.lead { font-size: 18px; color: var(--muted); max-width: 64ch; }
+.hero p.lead strong { color: var(--ink); font-weight: 600; }
+
+/* Demo */
+.demo .wrap { padding-block: 8px 48px; }
+.demo-grid { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 20px; align-items: start; }
+.rail {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: grid;
+  gap: 18px;
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+}
+.rail fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 6px; min-width: 0; }
+.rail legend { padding: 0; margin-bottom: 6px; }
+.opt { display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: start; padding: 8px; border-radius: 8px; cursor: pointer; }
+.opt:hover { background: var(--bg); }
+.opt input { margin: 3px 0 0; accent-color: var(--accent); }
+.opt span { font-size: 14px; font-weight: 600; line-height: 1.3; }
+.opt:has(input:checked) { background: var(--accent-soft); }
+.seg { display: flex; flex-wrap: wrap; gap: 4px; }
+.seg label { position: relative; }
+.seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.seg span {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  background: var(--surface);
+}
+.seg input:checked + span { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.seg input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.seg input:disabled + span { opacity: 0.4; cursor: not-allowed; }
+.rail .hint { font-size: 12.5px; color: var(--muted); }
+select {
+  font: inherit;
+  font-size: 14px;
+  width: 100%;
+  padding: 7px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+.check { display: flex; gap: 8px; align-items: center; font-size: 14px; cursor: pointer; }
+.check input { accent-color: var(--accent); margin: 0; }
+
+.stage { display: grid; gap: 14px; min-width: 0; }
+.desc {
+  display: grid;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.desc p { font-size: 15px; max-width: 80ch; }
+.desc .who { font-weight: 600; }
+.desc .who i { font-style: normal; display: inline-block; width: 18px; height: 18px; border-radius: 4px; text-align: center; font-family: var(--font-mono); font-size: 12px; line-height: 18px; margin-right: 6px; color: var(--accent-ink); }
+
+.maps { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.panel {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.panel header { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.tag {
+  flex: none;
+  width: 22px; height: 22px;
+  border-radius: 5px;
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-ink);
+}
+.tag.a, .who i.a { background: var(--accent); }
+.tag.b, .who i.b { background: var(--b); }
+.panel h3 { font-size: 16px; font-weight: 700; overflow-wrap: anywhere; }
+.panel h3 small { font-family: var(--font-body); font-weight: 500; color: var(--muted); font-size: 13px; }
+.mapwrap { position: relative; border-radius: 6px; overflow: hidden; background: var(--bldg); }
+.mapwrap canvas { display: block; }
+.mapwrap canvas.dyn { position: absolute; inset: 0; }
+.clock {
+  position: absolute; left: 8px; top: 8px;
+  font-family: var(--font-mono); font-size: 13px; font-variant-numeric: tabular-nums;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 6px; padding: 3px 7px;
+}
+.loading {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 14px; color: var(--ink);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+.readouts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 0; }
+.readouts div { border-top: 1px solid var(--line); padding-top: 6px; min-width: 0; }
+.readouts dt { font-size: 11.5px; color: var(--muted); line-height: 1.25; }
+.readouts dd { margin: 2px 0 0; font-family: var(--font-mono); font-size: 18px; font-variant-numeric: tabular-nums; font-weight: 500; }
+.readouts dd.hot { color: var(--dot3); }
+.runstats { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.runstats b { color: var(--ink); font-family: var(--font-mono); font-weight: 500; }
+
+.transport {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px;
+}
+.play {
+  font: inherit; font-weight: 600; font-size: 14px;
+  border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer;
+  background: var(--accent); color: var(--accent-ink);
+  min-width: 110px;
+}
+.transport input[type="range"] { flex: 1 1 200px; accent-color: var(--accent); min-width: 0; }
+.tlabel { font-family: var(--font-mono); font-size: 13px; font-variant-numeric: tabular-nums; color: var(--muted); }
+
+.below { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 8px; min-width: 0; }
+.card h3 { font-size: 15px; font-weight: 700; }
+.chartbox canvas { width: 100%; height: 190px; display: block; }
+.legend { display: grid; gap: 8px; font-size: 13px; }
+.legend .row { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 5px; }
+.note { font-size: 12.5px; color: var(--muted); }
+
+/* Sections */
+section.block .wrap { padding-block: 48px; display: grid; gap: 22px; }
+section.block + section.block .wrap { border-top: 1px solid var(--line); }
+section.block h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 700; max-width: 26ch; }
+.intro { color: var(--muted); max-width: 66ch; }
+.findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.finding { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.finding .big { font-family: var(--font-display); font-size: 40px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.finding .big small { font-size: 18px; font-weight: 500; color: var(--muted); margin-left: 4px; }
+.finding p { font-size: 15px; color: var(--muted); }
+.finding p strong { color: var(--ink); font-weight: 600; }
+.bars { display: grid; gap: 5px; margin-top: 4px; }
+.bars .bar { display: grid; grid-template-columns: 58px 1fr 64px; gap: 8px; align-items: center; font-family: var(--font-mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+.bars .track { height: 10px; background: var(--bg); border-radius: 3px; overflow: hidden; }
+.bars .fill { height: 100%; background: var(--dot3); border-radius: 3px; }
+.bars .bar span:last-child { text-align: right; color: var(--muted); }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; counter-reset: step; }
+.step { border-top: 2px solid var(--ink); padding-top: 12px; display: grid; gap: 6px; align-content: start; }
+.step::before { counter-increment: step; content: "0" counter(step); font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+.step h3 { font-size: 18px; }
+.step p { font-size: 15px; color: var(--muted); }
+
+.venues { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.venue { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: grid; gap: 8px; align-content: start; }
+.venue h3 { font-size: 19px; }
+.venue p { font-size: 15px; color: var(--muted); }
+.venue .q { font-size: 14px; color: var(--ink); border-left: 2px solid var(--accent); padding-left: 10px; }
+.needs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.needs ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.caveat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; font-size: 14.5px; color: var(--muted); }
+.caveat strong { color: var(--ink); }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; }
+
+@media (max-width: 980px) {
+  .demo-grid { grid-template-columns: minmax(0, 1fr); }
+  .rail { position: static; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .below, .needs { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .readouts dd { font-size: 16px; }
+  .hero .wrap { padding-block: 28px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<div class="demo-switch"><div class="wrap"><a href="../index.html" style="opacity:1;font-weight:600">← INFERA Labs</a> <span>Demos de Aforia:</span> <a href="index.html">Mascletà en la plaza del Ayuntamiento</a> <a href="recinto.html" aria-current=page>Recinto de fiestas y conciertos</a></div></div>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#demo" aria-label="Aforia">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <g fill="var(--accent)">
+          <circle cx="5" cy="7" r="2.2"/><circle cx="11" cy="7" r="2.2"/><circle cx="17" cy="7" r="2.2"/><circle cx="23" cy="7" r="2.2"/>
+          <circle cx="8" cy="13" r="2.2"/><circle cx="14" cy="13" r="2.2"/><circle cx="20" cy="13" r="2.2"/>
+          <circle cx="11" cy="19" r="2.2"/><circle cx="17" cy="19" r="2.2"/>
+        </g>
+        <circle cx="14" cy="25.5" r="2.2" fill="var(--dot3)"/>
+        <path d="M26 15 L30 15 M26 22 L30 22" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <b>aforia</b>
+    </a>
+    <nav aria-label="Secciones">
+      <a href="#demo">Demo</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#plantilla">Tu recinto</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Simulación de multitudes · recintos de fiestas y conciertos</span>
+    <h1>Del escenario a la puerta, sin sorpresas.</h1>
+    <p class="lead">Un recinto vallado con 10.000 personas: escenario, barras, aseos, puertas y salidas de emergencia.
+      Mira qué pasa cuando empieza el artista principal, cuando termina el concierto y cuando suena una alarma, y
+      compara alternativas de diseño. <strong>Es una plantilla: cada medida se ajusta a tu recinto.</strong></p>
+  </div>
+</section>
+
+<section class="demo" id="demo">
+  <div class="wrap">
+    <div class="demo-grid">
+      <aside class="rail" aria-label="Controles de la simulación">
+        <fieldset id="scn-set">
+          <legend class="eyebrow">Escenario</legend>
+        </fieldset>
+        <fieldset>
+          <legend class="eyebrow">Comparar con</legend>
+          <select id="cmp" aria-label="Escenario para comparar"></select>
+          <p class="hint">Solo se comparan escenarios de la misma fase.</p>
+        </fieldset>
+        <fieldset>
+          <legend class="eyebrow">Vista</legend>
+          <label class="check"><input type="checkbox" id="heat"> Mapa de calor de densidad</label>
+        </fieldset>
+      </aside>
+
+      <div class="stage">
+        <div class="desc" id="desc"></div>
+        <div class="maps" id="maps"></div>
+        <div class="transport">
+          <button class="play" id="play" type="button">Reproducir</button>
+          <div class="seg" id="speed-set" role="radiogroup" aria-label="Velocidad"></div>
+          <input type="range" id="time" min="0" max="600" step="1" value="0" aria-label="Tiempo">
+          <span class="tlabel" id="tlabel">00:00</span>
+        </div>
+        <div class="below">
+          <div class="card chartbox">
+            <h3 id="chart-title">Personas que quedan en el recinto</h3>
+            <canvas id="chart" aria-label="Evolución en el tiempo"></canvas>
+          </div>
+          <div class="card legend">
+            <h3>Cómo leer el mapa</h3>
+            <div class="row"><span>Densidad alrededor de cada persona:</span></div>
+            <div class="row" style="font-family: var(--font-mono); font-size: 12.5px;">
+              <span><i class="sw" style="background: var(--dot0)"></i>&lt; 2 p/m²</span>
+              <span><i class="sw" style="background: var(--dot1)"></i>2–3</span>
+              <span><i class="sw" style="background: var(--dot2)"></i>3–4</span>
+              <span><i class="sw" style="background: var(--dot3)"></i>&gt; 4 (riesgo)</span>
+            </div>
+            <div class="row">
+              <span><i class="sw" style="background: var(--exit)"></i>Puerta habitual</span>
+              <span><i class="sw" style="background: var(--fire)"></i>Salida de emergencia</span>
+              <span><i class="sw" style="background: var(--ink)"></i>Escenario y vallas</span>
+            </div>
+            <p class="note">Por encima de 4 personas/m² ya no se puede andar con libertad; hacia 5–6 empieza el riesgo de
+              aplastamiento. El modelo no simula empujones, así que muestra dónde se comprime la gente, no con qué fuerza.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="resultados">
+  <div class="wrap">
+    <span class="eyebrow">Resultados de esta demo</span>
+    <h2>Lo que muestra la simulación</h2>
+    <div class="findings" id="findings"></div>
+  </div>
+</section>
+
+<section class="block" id="plantilla">
+  <div class="wrap">
+    <span class="eyebrow">Una plantilla, cualquier recinto</span>
+    <h2>Se ajusta a tu espacio en minutos</h2>
+    <p class="intro">El recinto de la demo es genérico. Cada elemento es un parámetro, así que el mismo modelo sirve
+      para una plaza vallada en fiestas, una explanada de conciertos, un recinto ferial o un festival.</p>
+    <div class="venues">
+      <div class="venue">
+        <h3>Dimensiones y escenario</h3>
+        <p>Tamaño del recinto, escenario, valla y foso de seguridad, foso delantero con aforo controlado.</p>
+      </div>
+      <div class="venue">
+        <h3>Servicios</h3>
+        <p>Barras, aseos, mesa de sonido, torres o cualquier obstáculo, con su posición y tamaño.</p>
+      </div>
+      <div class="venue">
+        <h3>Puertas y salidas</h3>
+        <p>Número, posición y anchura de puertas habituales y salidas de emergencia; cuáles se abren en cada fase.</p>
+      </div>
+      <div class="venue">
+        <h3>Público y situaciones</h3>
+        <p>Aforo, reparto (más denso junto al escenario), tiempo de reacción, puertas bloqueadas, incidentes.</p>
+      </div>
+    </div>
+    <div class="caveat">
+      <strong>Es un prototipo.</strong> Cada persona va a la salida más cercana aunque esté saturada, lo que exagera
+      el desequilibrio entre puertas, y el modelo aún no está calibrado con datos de eventos reales. Las cifras sirven
+      para comparar diseños y escenarios, no como predicción exacta.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Aforia, de INFERA Labs · prototipo, noviembre de 2026</span>
+    <span>Motor de simulación: JuPedSim</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  "use strict";
+  const $ = (s, el = document) => el.querySelector(s);
+  const fmtInt = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  const fmtDec = (x, d = 1) => x.toFixed(d).replace(".", ",");
+  const mmss = (t) => {
+    t = Math.max(0, Math.round(t));
+    return String(Math.floor(t / 60)).padStart(2, "0") + ":" + String(t % 60).padStart(2, "0");
+  };
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const SPEEDS = [1, 2, 5, 10, 20, 40];
+  const CELL = 2, RISK_COUNT = 17;
+  const VIEW = [-8, -8, 88, 112];
+  const DEFAULT_SPEED = { surge: 2, exit: 20 };
+
+  const state = { scn: "frente_abierto", cmp: "frente_foso", heat: false, t: 0, playing: false, speed: 2 };
+  let GEOS = {}, RUNS = [], byId = {};
+  const cache = new Map();
+  const panels = [];
+
+  let C = {};
+  function readColors() {
+    const cs = getComputedStyle(document.documentElement);
+    const keys = ["bg", "surface", "ink", "muted", "line", "accent", "b", "street", "bldg", "bldg-edge", "exit", "fire", "plaza", "dot0", "dot1", "dot2", "dot3"];
+    C = {};
+    for (const k of keys) C[k] = cs.getPropertyValue("--" + k).trim();
+    C.rgb = ["dot0", "dot1", "dot2", "dot3"].map((k) => hexToRgb(C[k]));
+  }
+  function hexToRgb(h) {
+    h = h.replace("#", "");
+    if (h.length === 3) h = h.split("").map((c) => c + c).join("");
+    const n = parseInt(h, 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+  const packRGBA = ([r, g, b], a = 255) => ((a << 24) | (b << 16) | (g << 8) | r) >>> 0;
+
+  // ---------- data ----------
+  async function loadRun(id) {
+    if (cache.has(id)) return cache.get(id);
+    const p = (async () => {
+      const res = await fetch(byId[id].file);
+      if (!res.ok) throw new Error("No se pudo cargar " + byId[id].file);
+      const bin = atob((await res.text()).trim());
+      const bytes = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      let buf = bytes.buffer;
+      if (bytes[0] === 0x1f && bytes[1] === 0x8b) {
+        const stream = new Blob([buf]).stream().pipeThrough(new DecompressionStream("gzip"));
+        buf = await new Response(stream).arrayBuffer();
+      }
+      return decode(buf);
+    })();
+    cache.set(id, p);
+    return p;
+  }
+  function decode(buf) {
+    const dv = new DataView(buf);
+    const n = dv.getUint32(0, true), ns = dv.getUint32(4, true), step = dv.getFloat32(8, true);
+    let p = 12;
+    const alive = new Uint16Array(buf.slice(p, p + 2 * ns)); p += 2 * ns;
+    const first = new Int16Array(buf.slice(p, p + 4 * n)); p += 4 * n;
+    const deltas = new Int8Array(buf, p);
+    let total = 0;
+    for (let f = 0; f < ns; f++) total += 2 * alive[f];
+    const P = new Int16Array(total), off = new Uint32Array(ns);
+    P.set(first, 0);
+    let o = 2 * n, d = 0;
+    for (let f = 1; f < ns; f++) {
+      const k2 = 2 * alive[f], prev = off[f - 1];
+      off[f] = o;
+      for (let i = 0; i < k2; i++) P[o + i] = P[prev + i] + deltas[d + i];
+      o += k2; d += k2;
+    }
+    return { n, ns, step, alive, P, off, duration: (ns - 1) * step };
+  }
+
+  // ---------- drawing the venue ----------
+  function pathRings(ctx, rings) {
+    for (const r of rings) {
+      ctx.moveTo(r[0][0], r[0][1]);
+      for (let i = 1; i < r.length; i++) ctx.lineTo(r[i][0], r[i][1]);
+      ctx.closePath();
+    }
+  }
+  const OB_COLOR = { "Escenario": "ink", "Valla del foso": "ink", "Barra": "plaza", "Aseos": "plaza", "Mesa de sonido": "plaza" };
+
+  function drawBase(pn) {
+    const G = GEOS[byId[pn.runId].geo];
+    const { base, s, dpr, W } = pn;
+    const ctx = base.getContext("2d");
+    const [x0, , , y1] = VIEW;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.fillStyle = C.bldg;
+    ctx.fillRect(0, 0, base.width, base.height);
+    ctx.setTransform(dpr * s, 0, 0, -dpr * s, -x0 * dpr * s, y1 * dpr * s);
+    const lw = (px) => px / s;
+
+    ctx.beginPath();
+    for (const poly of G.walkable) pathRings(ctx, poly);
+    ctx.fillStyle = C.street;
+    ctx.fill("evenodd");
+    // fence
+    const [vx0, vy0, vx1, vy1] = G.venue;
+    ctx.strokeStyle = C.muted; ctx.lineWidth = lw(2);
+    ctx.strokeRect(vx0, vy0, vx1 - vx0, vy1 - vy0);
+    // gates: open ones cut the fence and are coloured; closed ones stay as fence
+    for (const g of G.gates) {
+      if (!g.open) continue;
+      const col = g.kind === "emergency" ? C.fire : C.exit;
+      ctx.beginPath(); pathRings(ctx, g.passage);
+      ctx.fillStyle = C.street; ctx.fill();
+      ctx.lineWidth = lw(3); ctx.strokeStyle = col;
+      ctx.beginPath();
+      const r = g.passage[0];
+      const xs = r.map((p) => p[0]), ys = r.map((p) => p[1]);
+      const minx = Math.min(...xs), maxx = Math.max(...xs), miny = Math.min(...ys), maxy = Math.max(...ys);
+      if (g.side === "south") { ctx.moveTo(minx, 0); ctx.lineTo(maxx, 0); }
+      else { const xx = g.side === "west" ? 0 : vx1; ctx.moveTo(xx, miny); ctx.lineTo(xx, maxy); }
+      ctx.stroke();
+    }
+    for (const ob of G.obstacles) {
+      ctx.beginPath();
+      for (const poly of ob.polys) pathRings(ctx, poly);
+      ctx.fillStyle = C[OB_COLOR[ob.label] || "plaza"];
+      ctx.fill("evenodd");
+    }
+
+    // labels
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const toPx = (x, y) => [(x - x0) * s, (y1 - y) * s];
+    const font = getComputedStyle(document.body).getPropertyValue("--font-body") || "sans-serif";
+    const label = (text, x, y, o = {}) => {
+      const [px, py] = toPx(x, y);
+      ctx.save();
+      ctx.translate(px, py);
+      if (o.rotate) ctx.rotate(o.rotate);
+      ctx.font = `${o.weight || 600} ${o.size || 11}px ${font}`;
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      if (o.halo !== false) { ctx.lineWidth = 3; ctx.strokeStyle = C.street; ctx.lineJoin = "round"; ctx.strokeText(text, 0, 0); }
+      ctx.fillStyle = o.color || C.muted;
+      ctx.fillText(text, 0, 0);
+      ctx.restore();
+    };
+    for (const ob of G.obstacles) {
+      if (!["Escenario", "Barra", "Aseos"].includes(ob.label)) continue;
+      const r = ob.polys[0][0];
+      const xs = r.map((p) => p[0]), ys = r.map((p) => p[1]);
+      const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
+      const cy = ob.label === "Escenario" ? Math.max(...ys) - 6 : (Math.min(...ys) + Math.max(...ys)) / 2;
+      const tall = (Math.max(...ys) - Math.min(...ys)) > 2 * (Math.max(...xs) - Math.min(...xs));
+      label(ob.label, cx, cy, { color: C.surface, halo: false, size: 10, rotate: tall ? -Math.PI / 2 : 0 });
+    }
+    if (W >= 330) {
+      for (const g of G.gates) {
+        if (!g.open) continue;
+        const short = g.name.replace("Emergencia", "Em.").replace("Puerta ", "");
+        const col = g.kind === "emergency" ? C.fire : C.exit;
+        if (g.side === "south") label(short, g.x, g.y + 1, { size: 10, color: col });
+        else label(short, g.x + (g.side === "west" ? 9 : -9), g.y + 4, { size: 10, color: col });
+      }
+    }
+  }
+
+  // ---------- panels ----------
+  function makePanel(slot) {
+    const el = document.createElement("figure");
+    el.className = "panel";
+    el.innerHTML = `
+      <header><span class="tag ${slot}">${slot.toUpperCase()}</span><h3></h3></header>
+      <div class="mapwrap">
+        <canvas class="base" role="img"></canvas><canvas class="dyn" aria-hidden="true"></canvas>
+        <div class="clock">00:00</div>
+        <div class="loading" hidden>Cargando simulación…</div>
+      </div>
+      <dl class="readouts">
+        <div><dt>Personas en el recinto</dt><dd class="r-in">–</dd></div>
+        <div><dt>Personas a más de 4 p/m²</dt><dd class="r-risk">–</dd></div>
+        <div><dt>Superficie a más de 4 p/m²</dt><dd class="r-area">–</dd></div>
+      </dl>
+      <p class="runstats"></p>`;
+    return { slot, el, base: $(".base", el), dyn: $(".dyn", el), clock: $(".clock", el), loading: $(".loading", el),
+      rIn: $(".r-in", el), rRisk: $(".r-risk", el), rArea: $(".r-area", el), stats: $(".runstats", el), title: $("h3", el),
+      runId: null, data: null, lastReadout: 0 };
+  }
+
+  function runStats(r) {
+    if (r.kind === "surge")
+      return `Densidad final junto al escenario: <b>${fmtDec(r.zone_density_final)}</b> p/m² · personas a más de 5 p/m²: <b>${fmtInt(r.people_above_5)}</b>`;
+    return `Salidas abiertas: <b>${fmtInt(r.open_width_m)} m</b> · sale el 50 %: <b>${mmss(r.t50)}</b> · 99 %: <b>${mmss(r.t99)}</b> min`;
+  }
+
+  async function setPanels() {
+    const ids = [state.scn];
+    if (state.cmp && state.cmp !== ids[0]) ids.push(state.cmp);
+    const maps = $("#maps");
+    while (panels.length > ids.length) panels.pop().el.remove();
+    while (panels.length < ids.length) { const p = makePanel(panels.length ? "b" : "a"); panels.push(p); maps.appendChild(p.el); }
+    $("#desc").innerHTML = ids.map((id, i) => `<p><span class="who"><i class="${i ? "b" : "a"}">${i ? "B" : "A"}</i>${byId[id].title}.</span> ${byId[id].desc}</p>`).join("");
+    layout();
+    await Promise.all(panels.map(async (pn, i) => {
+      const id = ids[i], r = byId[id];
+      pn.runId = id;
+      pn.title.textContent = r.title;
+      pn.base.setAttribute("aria-label", `Plano del recinto: ${r.title}`);
+      pn.stats.innerHTML = runStats(r);
+      pn.data = null;
+      drawBase(pn);
+      pn.loading.hidden = false;
+      try {
+        const d = await loadRun(id);
+        if (pn.runId !== id) return;
+        pn.data = d; pn.loading.hidden = true;
+      } catch (e) {
+        pn.loading.textContent = "No se pudo cargar esta simulación. Abre la demo desde un servidor web.";
+      }
+    }));
+    $("#time").max = String(Math.ceil(maxDuration()));
+    if (state.t > maxDuration()) state.t = maxDuration();
+    drawChart();
+    drawFrame(true);
+  }
+
+  function layout() {
+    const avail = $("#maps").clientWidth;
+    const [x0, y0, x1, y1] = VIEW;
+    const aspect = (y1 - y0) / (x1 - x0);
+    const gap = 14, pad = 22;
+    const cols = panels.length > 1 && avail > 640 ? 2 : 1;
+    const maxH = Math.max(380, Math.min(window.innerHeight * 0.72, 700));
+    let w = (avail - gap * (cols - 1)) / cols - pad;
+    w = Math.max(240, Math.floor(Math.min(w, maxH / aspect)));
+    const h = Math.floor(w * aspect);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    for (const pn of panels) {
+      pn.el.style.width = (w + pad) + "px";
+      for (const c of [pn.base, pn.dyn]) {
+        c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+        c.style.width = w + "px"; c.style.height = h + "px";
+      }
+      Object.assign(pn, { W: w, H: h, dpr, s: w / (x1 - x0) });
+      pn.img = pn.dyn.getContext("2d").createImageData(pn.dyn.width, pn.dyn.height);
+      pn.buf32 = new Uint32Array(pn.img.data.buffer);
+      pn.grid = { nx: Math.ceil((x1 - x0) / CELL), ny: Math.ceil((y1 - y0) / CELL) };
+      pn.counts = new Uint16Array(pn.grid.nx * pn.grid.ny);
+      if (pn.runId) drawBase(pn);
+    }
+  }
+
+  let xs = new Float32Array(30000), ys = new Float32Array(30000);
+  function drawPanel(pn, t, force) {
+    const d = pn.data, ctx = pn.dyn.getContext("2d");
+    pn.clock.textContent = mmss(t);
+    if (!d) { ctx.clearRect(0, 0, pn.dyn.width, pn.dyn.height); return; }
+    const [x0, y0, , y1] = VIEW;
+    let f = Math.floor(t / d.step), a = t / d.step - f;
+    if (f >= d.ns - 1) { f = d.ns - 1; a = 0; }
+    const k0 = d.alive[f], k1 = f + 1 < d.ns ? d.alive[f + 1] : k0;
+    const o0 = d.off[f], o1 = f + 1 < d.ns ? d.off[f + 1] : o0, P = d.P;
+    if (xs.length < k0) { xs = new Float32Array(k0); ys = new Float32Array(k0); }
+    let m = 0;
+    for (let i = 0; i < k1; i++) {
+      const j = 2 * i;
+      xs[m] = (P[o0 + j] * (1 - a) + P[o1 + j] * a) * 0.1;
+      ys[m] = (P[o0 + j + 1] * (1 - a) + P[o1 + j + 1] * a) * 0.1;
+      m++;
+    }
+    if (a < 0.5) for (let i = k1; i < k0; i++) { xs[m] = P[o0 + 2 * i] * 0.1; ys[m] = P[o0 + 2 * i + 1] * 0.1; m++; }
+
+    const { nx, ny } = pn.grid, counts = pn.counts;
+    counts.fill(0);
+    for (let i = 0; i < m; i++) {
+      const cx = Math.floor((xs[i] - x0) / CELL), cy = Math.floor((ys[i] - y0) / CELL);
+      if (cx >= 0 && cy >= 0 && cx < nx && cy < ny) counts[cy * nx + cx]++;
+    }
+    const buf = pn.buf32, Wp = pn.dyn.width, Hp = pn.dyn.height, sp = pn.s * pn.dpr;
+    buf.fill(0);
+    const level = (c) => (c >= RISK_COUNT ? 3 : c >= 13 ? 2 : c >= 9 ? 1 : 0);
+    if (state.heat) {
+      const cpx = CELL * sp;
+      for (let cy = 0; cy < ny; cy++) for (let cx = 0; cx < nx; cx++) {
+        const c = counts[cy * nx + cx];
+        if (c < 3) continue;
+        const lv = level(c);
+        const col = packRGBA(C.rgb[lv], lv === 0 ? Math.min(150, 40 + c * 12) : 215);
+        const px0 = Math.floor(cx * cpx), px1 = Math.min(Wp, Math.floor((cx + 1) * cpx));
+        const yTop = Math.max(0, Math.floor((y1 - (y0 + (cy + 1) * CELL)) * sp));
+        const yBot = Math.min(Hp, Math.floor((y1 - (y0 + cy * CELL)) * sp));
+        for (let py = yTop; py < yBot; py++) buf.fill(col, py * Wp + px0, py * Wp + px1);
+      }
+    } else {
+      const cols = C.rgb.map((c) => packRGBA(c));
+      const size = Math.max(2, Math.round(0.42 * sp)), half = size >> 1;
+      for (let i = 0; i < m; i++) {
+        const cx = Math.floor((xs[i] - x0) / CELL), cy = Math.floor((ys[i] - y0) / CELL);
+        const c = cx >= 0 && cy >= 0 && cx < nx && cy < ny ? counts[cy * nx + cx] : 0;
+        const px = Math.round((xs[i] - x0) * sp) - half, py = Math.round((y1 - ys[i]) * sp) - half;
+        if (px < 0 || py < 0 || px + size > Wp || py + size > Hp) continue;
+        const col = cols[level(c)];
+        for (let r = 0; r < size; r++) buf.fill(col, (py + r) * Wp + px, (py + r) * Wp + px + size);
+      }
+    }
+    ctx.putImageData(pn.img, 0, 0);
+    const now = performance.now();
+    if (force || now - pn.lastReadout > 120) {
+      pn.lastReadout = now;
+      let riskPeople = 0, riskCells = 0;
+      for (let i = 0; i < counts.length; i++) if (counts[i] >= RISK_COUNT) { riskPeople += counts[i]; riskCells++; }
+      pn.rIn.textContent = fmtInt(Math.round(k0 * (1 - a) + k1 * a));
+      pn.rRisk.textContent = fmtInt(riskPeople);
+      pn.rArea.textContent = fmtInt(riskCells * CELL * CELL) + " m²";
+      pn.rRisk.classList.toggle("hot", riskPeople > 0);
+      pn.rArea.classList.toggle("hot", riskCells > 0);
+    }
+  }
+
+  function maxDuration() {
+    let m = 0;
+    for (const pn of panels) {
+      const r = byId[pn.runId];
+      m = Math.max(m, pn.data ? pn.data.duration : r ? (r.samples - 1) * r.step : 0);
+    }
+    return m || 120;
+  }
+  function drawFrame(force) {
+    for (const pn of panels) drawPanel(pn, state.t, force);
+    $("#time").value = String(Math.round(state.t));
+    $("#tlabel").textContent = mmss(state.t) + " / " + mmss(maxDuration());
+    drawChartCursor();
+  }
+
+  // ---------- chart ----------
+  let chartBase = null, chartGeom = null;
+  function drawChart() {
+    const cv = $("#chart"), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = cv.clientWidth, h = cv.clientHeight;
+    if (!w) return;
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    const ctx = cv.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const kind = byId[state.scn].kind;
+    $("#chart-title").textContent = kind === "surge" ? "Densidad media en los 10 m junto al escenario" : "Personas que quedan en el recinto";
+    const L = 44, R = 10, T = 8, B = 24;
+    const tMax = kind === "surge" ? Math.ceil(maxDuration() / 30) * 30 : Math.ceil(maxDuration() / 300) * 300;
+    let yMax, yStep, yFmt;
+    if (kind === "surge") { yMax = 6; yStep = 1; yFmt = (v) => String(v); }
+    else {
+      yMax = Math.max(...panels.map((pn) => byId[pn.runId].people)); yStep = 2500;
+      yMax = Math.ceil(yMax / yStep) * yStep; yFmt = (v) => (v ? fmtDec(v / 1000, 1).replace(",0", "") + "k" : "0");
+    }
+    const X = (t) => L + (t / tMax) * (w - L - R), Y = (v) => T + (1 - v / yMax) * (h - T - B);
+    const font = getComputedStyle(document.body).getPropertyValue("--font-mono") || "monospace";
+    ctx.font = `11px ${font}`; ctx.fillStyle = C.muted; ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.textAlign = "right"; ctx.textBaseline = "middle";
+    for (let v = 0; v <= yMax; v += yStep) {
+      ctx.beginPath(); ctx.moveTo(L, Y(v) + 0.5); ctx.lineTo(w - R, Y(v) + 0.5); ctx.stroke();
+      ctx.fillText(yFmt(v), L - 6, Y(v));
+    }
+    ctx.textAlign = "center"; ctx.textBaseline = "top";
+    const tStep = kind === "surge" ? 30 : tMax > 1500 ? 600 : 300;
+    for (let t = 0; t <= tMax; t += tStep) ctx.fillText(mmss(t), X(t), h - B + 6);
+    if (kind === "surge") {
+      ctx.setLineDash([4, 4]); ctx.strokeStyle = C.dot3;
+      ctx.beginPath(); ctx.moveTo(L, Y(4) + 0.5); ctx.lineTo(w - R, Y(4) + 0.5); ctx.stroke(); ctx.setLineDash([]);
+    }
+    panels.forEach((pn) => {
+      const r = byId[pn.runId], col = pn.slot === "a" ? C.accent : C.b;
+      ctx.strokeStyle = col; ctx.lineWidth = 2;
+      if (r.kind === "surge") {
+        const series = [[r.zone_series, []], [r.back_series, [5, 4]]];
+        for (const [sr, dash] of series) {
+          if (!sr || !sr.length) continue;
+          ctx.setLineDash(dash); ctx.beginPath();
+          sr.forEach((v, i) => (i ? ctx.lineTo(X(i), Y(v)) : ctx.moveTo(X(i), Y(v))));
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+      } else if (pn.data) {
+        const d = pn.data;
+        ctx.beginPath();
+        for (let f = 0; f < d.ns; f++) (f ? ctx.lineTo(X(f * d.step), Y(d.alive[f])) : ctx.moveTo(X(0), Y(d.alive[0])));
+        ctx.stroke();
+      }
+    });
+    chartBase = ctx.getImageData(0, 0, cv.width, cv.height);
+    chartGeom = { X, T, B, h, dpr };
+  }
+  function drawChartCursor() {
+    if (!chartBase || !chartGeom) return;
+    const cv = $("#chart"), ctx = cv.getContext("2d");
+    ctx.putImageData(chartBase, 0, 0);
+    const { X, T, B, h, dpr } = chartGeom;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const x = Math.round(X(state.t)) + 0.5;
+    ctx.beginPath(); ctx.moveTo(x, T); ctx.lineTo(x, h - B); ctx.strokeStyle = C.ink; ctx.lineWidth = 1; ctx.stroke();
+  }
+
+  // ---------- findings ----------
+  function renderFindings() {
+    const op = byId.frente_abierto, pen = byId.frente_foso, sal = byId.salida;
+    const ev = byId.evacuacion, evb = byId.evacuacion_sin_principal, evw = byId.evacuacion_ampliada;
+    const min = (s) => fmtDec(s / 60);
+    const ex = Object.entries(sal.exits), tot = ex.reduce((a, [, v]) => a + v, 0);
+    const [topName, topN] = ex[0];
+    const evEx = Object.entries(ev.exits), evTot = evEx.reduce((a, [, v]) => a + v, 0);
+    const nearStage = evEx.filter(([k]) => /oeste 2|Emergencia este$/.test(k)).reduce((a, [, v]) => a + v, 0);
+    const cards = [
+      `<div class="finding"><span class="eyebrow">Frente al escenario</span>
+        <div class="big">${fmtInt(op.people_above_5)}<small>personas</small></div>
+        <p>superan 5 personas/m² dos minutos después de empezar el concierto con el frente abierto. Con un
+        <strong>foso delantero</strong> de aforo controlado son <strong>${fmtInt(pen.people_above_5)}</strong>, y la
+        presión se traslada a la segunda valla, donde también hace falta personal.</p></div>`,
+      `<div class="finding"><span class="eyebrow">Puertas mal repartidas</span>
+        <div class="big">${Math.round(100 * topN / tot)} %<small>del público</small></div>
+        <p>sale por la ${topName.toLowerCase()} al final del concierto porque es la más cercana para la mayoría. La
+        otra puerta se vacía antes y el 99 % no ha salido hasta los <strong>${min(sal.t99)} min</strong>.</p></div>`,
+      `<div class="finding"><span class="eyebrow">Evacuación</span>
+        <div class="big">${min(ev.t99)}<small>min</small></div>
+        <p>hasta que sale el 99 % con todas las salidas abiertas (${fmtInt(ev.open_width_m)} m). Las dos salidas de
+        emergencia junto al escenario se llevan el <strong>${Math.round(100 * nearStage / evTot)} %</strong> de la gente,
+        porque ahí está el público más denso. Bloquear la puerta principal apenas cambia el resultado
+        (${min(evb.t99)} min): estaba infrautilizada.</p></div>`,
+      `<div class="finding"><span class="eyebrow">Un recinto mejor dimensionado</span>
+        <div class="big">${min(evw.t99)}<small>min</small></div>
+        <p>con ${fmtInt(evw.open_width_m)} m de salidas y dos salidas de emergencia más, frente a ${min(ev.t99)} min
+        con ${fmtInt(ev.open_width_m)} m. Una regla habitual de dimensionado pide 1 m por cada 200 personas:
+        ${fmtInt(ev.reference_width_m)} m para 10.000.</p></div>`,
+    ];
+    $("#findings").innerHTML = cards.join("");
+  }
+
+  // ---------- controls ----------
+  function buildControls() {
+    const groups = [["Empieza el concierto", RUNS.filter((r) => r.kind === "surge")],
+                    ["Salida y evacuación", RUNS.filter((r) => r.kind === "exit")]];
+    $("#scn-set").insertAdjacentHTML("beforeend", groups.map(([g, rs]) =>
+      `<p class="hint" style="margin:6px 0 0">${g}</p>` + rs.map((r) =>
+        `<label class="opt"><input type="radio" name="scn" id="scn-${r.id}" value="${r.id}" ${state.scn === r.id ? "checked" : ""}><span>${r.title.split(" · ")[1] ? r.title.split(" · ")[1][0].toUpperCase() + r.title.split(" · ")[1].slice(1) : r.title}</span></label>`).join("")).join(""));
+    $("#speed-set").innerHTML = SPEEDS.map((v) =>
+      `<label><input type="radio" name="speed" id="speed-${v}" value="${v}" ${v === state.speed ? "checked" : ""}><span>×${v}</span></label>`).join("");
+    fillCompare();
+    $("#scn-set").addEventListener("change", (e) => {
+      const prevKind = byId[state.scn].kind;
+      state.scn = e.target.value;
+      const kind = byId[state.scn].kind;
+      if (kind !== prevKind) {
+        state.t = 0;
+        state.cmp = kind === "surge" ? (state.scn === "frente_foso" ? "frente_abierto" : "frente_foso") : "";
+        setSpeed(DEFAULT_SPEED[kind]);
+      }
+      fillCompare();
+      setPanels();
+    });
+    $("#speed-set").addEventListener("change", (e) => { state.speed = +e.target.value; });
+    $("#cmp").addEventListener("change", (e) => { state.cmp = e.target.value; setPanels(); });
+    $("#heat").addEventListener("change", (e) => { state.heat = e.target.checked; drawFrame(true); });
+    $("#time").addEventListener("input", (e) => { state.t = +e.target.value; drawFrame(true); });
+    $("#play").addEventListener("click", () => setPlaying(!state.playing));
+  }
+  function setSpeed(v) {
+    state.speed = v;
+    document.querySelectorAll("#speed-set input").forEach((i) => (i.checked = +i.value === v));
+  }
+  function fillCompare() {
+    const kind = byId[state.scn].kind;
+    if (state.cmp && (state.cmp === state.scn || byId[state.cmp].kind !== kind)) state.cmp = "";
+    const opts = [["", "Sin comparar"]].concat(RUNS.filter((r) => r.kind === kind && r.id !== state.scn).map((r) => [r.id, r.title]));
+    $("#cmp").innerHTML = opts.map(([v, t]) => `<option value="${v}" ${v === state.cmp ? "selected" : ""}>${t}</option>`).join("");
+  }
+
+  // ---------- playback ----------
+  let last = 0;
+  function setPlaying(on) {
+    state.playing = on;
+    $("#play").textContent = on ? "Pausa" : (state.t >= maxDuration() ? "Repetir" : "Reproducir");
+    if (on) {
+      if (state.t >= maxDuration()) state.t = 0;
+      last = performance.now();
+      requestAnimationFrame(tick);
+    }
+  }
+  function tick(now) {
+    if (!state.playing) return;
+    const dt = Math.min(0.1, (now - last) / 1000);
+    last = now;
+    state.t = Math.min(maxDuration(), state.t + dt * state.speed);
+    drawFrame(false);
+    if (state.t >= maxDuration()) { setPlaying(false); drawFrame(true); return; }
+    requestAnimationFrame(tick);
+  }
+
+  function refreshAll() { readColors(); layout(); drawChart(); drawFrame(true); }
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", refreshAll);
+  new MutationObserver(refreshAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  let rz = 0;
+  window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(refreshAll, 120); });
+
+  async function start() {
+    readColors();
+    try {
+      const [g, m] = await Promise.all([
+        fetch("data_recinto/geometry.json").then((r) => r.json()),
+        fetch("data_recinto/manifest.json").then((r) => r.json()),
+      ]);
+      GEOS = g; RUNS = m;
+      for (const r of RUNS) byId[r.id] = r;
+    } catch (e) {
+      $("#desc").innerHTML = "<p>No se pudieron cargar los datos. Si has abierto el archivo directamente, lánzalo con un servidor web: <code>python -m http.server</code>.</p>";
+      return;
+    }
+    buildControls();
+    renderFindings();
+    await setPanels();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => panels.forEach(drawBase));
+    if (!reduceMotion) setPlaying(true);
+  }
+  start();
+})();
+</script>
+
+</body>
+</html>

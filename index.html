@@ -1,115 +1,76 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script>document.documentElement.className+=" js";</script>
-<title>INFERA Labs — Domain-adapted AI for regulated sectors</title>
-<meta name="description" content="INFERA Labs builds tailored LLM systems and specialised AI for regulated sectors, public institutions and critical technical operations — with traceability, monitoring and expert validation.">
+<title>INFERA Labs — IA predictiva fiable para sectores regulados</title>
+<meta name="description" content="INFERA Labs, spin-off de la Universitat de València, desarrolla IA predictiva y generativa para empresas de sectores regulados, defensa y salud: predicciones con su margen de error, respuestas con su fuente y supervisión humana. Formación en IA para equipos.">
 <link rel="canonical" href="https://inferalabs.es/">
-<link rel="alternate" hreflang="en" href="https://inferalabs.es/">
-<link rel="alternate" hreflang="es" href="https://inferalabs.es/es/">
+<link rel="alternate" hreflang="es" href="https://inferalabs.es/">
+<link rel="alternate" hreflang="en" href="https://inferalabs.es/en/">
 <link rel="alternate" hreflang="x-default" href="https://inferalabs.es/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="INFERA Labs">
-<meta property="og:locale" content="en_GB">
-<meta property="og:locale:alternate" content="es_ES">
-<meta property="og:title" content="INFERA Labs — Domain-adapted AI for regulated sectors">
-<meta property="og:description" content="INFERA Labs builds tailored LLM systems and specialised AI for regulated sectors, public institutions and critical technical operations — with traceability, monitoring and expert validation.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:title" content="INFERA Labs — IA predictiva fiable">
+<meta property="og:description" content="IA predictiva y generativa para sectores regulados, defensa y salud, con su margen de error, su fuente y supervisión humana.">
 <meta property="og:url" content="https://inferalabs.es/">
-<meta property="og:image" content="https://inferalabs.es/assets/img/og-en.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://inferalabs.es/assets/img/og-es.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="INFERA Labs — Domain-adapted AI for regulated sectors">
-<meta name="twitter:description" content="INFERA Labs builds tailored LLM systems and specialised AI for regulated sectors, public institutions and critical technical operations — with traceability, monitoring and expert validation.">
-<meta name="twitter:image" content="https://inferalabs.es/assets/img/og-en.png">
-<meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0C1219" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="/assets/img/icon-192.png" sizes="any" type="image/png">
-<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#070f1d">
+<link rel="icon" href="assets/img/icon-192.png" sizes="any" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-<link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="/assets/css/demo.css">
-<script src="/assets/js/demo.js" defer></script>
-<script>window.addEventListener("DOMContentLoaded",function(){InferaDemo.mount("#infera-demo",{verticals:[{"id": "ai-act", "label": {"es": "Reglamento de IA", "en": "AI Act"}, "question": {"es": "¿Está tu empresa lista para el Reglamento de IA?", "en": "Is your company ready for the AI Act?"}, "scenarios": ["rol-proveedor-o-responsable", "practicas-prohibidas", "es-alto-riesgo", "que-aplica-y-cuando", "me-pueden-multar-en-espana", "deberiamos-seguir-usandolo"]}, {"id": "agri", "label": {"es": "Normativa fitosanitaria", "en": "Plant protection rules"}, "question": {"es": "¿Qué normativa me aplica en mi explotación?", "en": "Which rules apply to my holding?"}, "scenarios": ["cotonet-authorised-products", "safety-interval-before-harvest", "buffer-zone-watercourse", "field-logbook-obligations", "organic-conversion-conflict", "resistance-strategy"]}]});});</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/v2.css">
+<link rel="stylesheet" href="assets/css/demo.css">
+<script src="assets/js/demo.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/v2.js" defer></script>
+<script>window.addEventListener("DOMContentLoaded",function(){InferaDemo.mount("#infera-demo",{base:"assets/demo/",verticals:[{"id":"ai-act","label":{"es":"Reglamento de IA","en":"AI Act"},"question":{"es":"¿Está tu empresa lista para el Reglamento de IA?","en":"Is your company ready for the AI Act?"},"scenarios":["rol-proveedor-o-responsable","practicas-prohibidas","es-alto-riesgo","que-aplica-y-cuando","me-pueden-multar-en-espana","deberiamos-seguir-usandolo"]},{"id":"agri","label":{"es":"Normativa fitosanitaria","en":"Plant protection rules"},"question":{"es":"¿Qué normativa me aplica en mi explotación?","en":"Which rules apply to my holding?"},"scenarios":["cotonet-authorised-products","safety-interval-before-harvest","buffer-zone-watercourse","field-logbook-obligations","organic-conversion-conflict","resistance-strategy"]}]});});</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "INFERA Labs",
+  "legalName": "INFERA LABS S.L.",
   "url": "https://inferalabs.es",
   "logo": "https://inferalabs.es/assets/img/logo.png",
-  "description": "INFERA Labs builds tailored LLM systems and specialised AI for regulated sectors, public institutions and critical technical operations — with traceability, monitoring and expert validation.",
   "email": "info@inferalabs.es",
-  "legalName": "INFERA LABS S.L.",
   "foundingDate": "2026-04-16",
-  "sameAs": [
-    "https://www.linkedin.com/company/infera-labs-s-l/"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "ES",
-    "addressLocality": "Paterna",
-    "addressRegion": "València",
-    "streetAddress": "Parc Científic de la Universitat de València, Catedrático Agustín Escardino 9"
-  },
-  "parentOrganization": [
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Universitat de València",
-      "url": "https://www.uv.es"
-    },
-    {
-      "@type": "ResearchOrganization",
-      "name": "Consejo Superior de Investigaciones Científicas (CSIC)",
-      "url": "https://www.csic.es"
-    }
-  ],
-  "founder": [
-    {
-      "@type": "Person",
-      "name": "Jaime Alcalá",
-      "jobTitle": "CEO & Co-Founder"
-    },
-    {
-      "@type": "Person",
-      "name": "Verónica Sanz",
-      "jobTitle": "Chief Scientific Advisor & Co-Founder"
-    }
-  ]
+  "description": "IA predictiva y generativa para empresas de sectores regulados, defensa y salud, y formación en IA para equipos.",
+  "sameAs": ["https://www.linkedin.com/company/infera-labs-s-l/"],
+  "address": {"@type": "PostalAddress", "addressCountry": "ES", "addressLocality": "Paterna", "addressRegion": "València", "streetAddress": "Parc Científic de la Universitat de València, Catedrático Agustín Escardino 9"},
+  "parentOrganization": {"@type": "CollegeOrUniversity", "name": "Universitat de València", "url": "https://www.uv.es"},
+  "founder": [{"@type": "Person", "name": "Jaime Alcalá", "jobTitle": "CEO y cofundador"}, {"@type": "Person", "name": "Verónica Sanz", "jobTitle": "Chief Scientific Advisor y cofundadora"}]
 }
 </script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Ir al contenido</a>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="/" aria-label="INFERA Labs">
-      <img class="logo-light" src="/assets/img/logo.png" alt="INFERA Labs" width="982" height="231" fetchpriority="high">
-      <img class="logo-dark" src="/assets/img/logo-dark.png" alt="INFERA Labs" width="982" height="231">
+    <a class="brand" href="index.html" aria-label="INFERA Labs, inicio">
+      <img src="assets/img/logo-dark.png" alt="INFERA Labs" width="982" height="231">
     </a>
-    <nav class="site-nav" id="primary-nav" aria-label="Primary">
-        <a href="#capabilities">Capabilities</a>
-        <a href="#sectors">Sectors</a>
-        <a href="#approach">Technology</a>
-        <a href="#governance">Governance</a>
-        <a href="#demo">Demos</a>
-        <a href="#research">Research</a>
-        <a href="#founders">Founders</a>
-        <a href="#training">Training</a>
-        <a href="#contact">Contact</a>
+    <nav class="site-nav" id="primary-nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#sectores">Sectores</a>
+      <a href="#demos">Demos</a>
+      <a href="#formacion">Formación</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#contact">Contacto</a>
     </nav>
-    <div class="header-tools">
-      <a class="lang" href="/es/" lang="es" hreflang="es" aria-label="Ver en español">
-        <span>ES</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico-open"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico-close"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    <div class="header-actions">
+      <a class="lang" href="en/index.html" lang="en" hreflang="en" aria-label="Read in English">EN</a>
+      <a class="btn btn-primary header-cta" href="#contact">Hablemos</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
@@ -120,429 +81,362 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">A Universitat de València spin-off</p>
-        <h1>Your technology partner for building and deploying AI</h1>
-        <p class="lead">We design, validate and deploy AI systems for regulated sectors, public institutions and organisations running complex technical operations — with the traceability and oversight those settings require.</p>
-        <p class="hero-support">Backed by the Universitat de València and the CSIC, and grounded in published research.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#how-we-start">Request a feasibility assessment</a>
-          <a class="btn btn-secondary" href="#capabilities">Where we work</a>
+        <span class="eyebrow">Spin-off de la Universitat de València</span>
+        <h1>IA predictiva en la que <em>se puede confiar.</em></h1>
+        <p class="lead">Desarrollamos sistemas de IA para empresas de sectores regulados, defensa y salud: predicciones con su margen de error, respuestas que citan su fuente y supervisión humana en cada paso.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#como-trabajamos">Solicitar una evaluación de viabilidad
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#demos">Ver las demos</a>
+        </div>
+        <ul class="hero-proof">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Metodología con origen en la UV y el CSIC</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Investigación revisada por pares</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Enfoque alineado con el Reglamento Europeo de IA</li>
+        </ul>
+      </div>
+
+      <figure class="panel" aria-label="Ejemplo ilustrativo de una previsión con su banda de incertidumbre y un aviso anticipado">
+        <div class="panel-head">
+          <span class="panel-title">Previsión con incertidumbre · ejemplo</span>
+          <span class="live">en directo</span>
+        </div>
+        <canvas id="forecast" data-l-obs="observado" data-l-fc="previsión" data-l-now="ahora" data-l-thr="umbral de alerta" data-l-ok="normal" data-l-alert="aviso anticipado"></canvas>
+        <div class="legend-line">
+          <span><i style="background:#e8eef6"></i>datos observados</span>
+          <span><i style="background:#3cc4bd"></i>previsión e intervalo de confianza</span>
+          <span><i style="background:#f2b33d"></i>umbral</span>
+        </div>
+        <dl class="panel-foot">
+          <div><dt>Estado</dt><dd id="fc-state">normal</dd></div>
+          <div><dt>Prob. de superar</dt><dd id="fc-prob">0 %</dd></div>
+          <div><dt>Antelación</dt><dd id="fc-lead">—</dd></div>
+        </dl>
+      </figure>
+    </div>
+  </section>
+
+  <section class="activity" aria-label="Actividad reciente">
+    <div class="wrap">
+      <ol>
+        <li><time datetime="2026-11">Nov 2026</time><span>Presentamos Aforia, nuestra simulación de multitudes para eventos y evacuaciones.</span></li>
+        <li><time datetime="2026">2026</time><span>Nuevo catálogo de formación en IA: 10 programas para empresas e instituciones.</span></li>
+        <li><time datetime="2026-04">Abr 2026</time><span>Aprobada como la primera spin-off de IA de la Universitat de València.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap backing">
+      <figure class="reveal">
+        <img src="assets/img/parc-cientific.webp" width="576" height="347" alt="Edificio del Parc Científic de la Universitat de València, en Paterna" loading="lazy">
+        <figcaption>Nuestra sede: Parc Científic de la Universitat de València, Paterna.</figcaption>
+      </figure>
+      <div class="reveal" data-delay="80">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2 style="font-size:clamp(30px,3.6vw,42px);margin-top:14px">Ciencia de primer nivel, convertida en sistemas que se pueden desplegar.</h2>
+        <p style="margin-top:16px;color:var(--ink-2);font-size:18px">Nacemos en la Universitat de València para llevar a la empresa métodos de IA que ya han pasado la prueba de la investigación: modelos que saben cuánto pueden equivocarse y que explican de dónde sale cada respuesta.</p>
+        <div class="facts">
+          <div class="fact"><b>Spin-off de la UV</b><span>La primera spin-off de IA de la universidad, aprobada en abril de 2026.</span></div>
+          <div class="fact"><b>Metodología UV–CSIC</b><span>Licencia de explotación de una metodología para adaptar modelos de lenguaje a cada sector.</span></div>
+          <div class="fact"><b>Investigación publicada</b><span>Artículos revisados por pares en IA, sistemas complejos y física.</span></div>
+          <div class="fact"><b>Parc Científic</b><span>Sede en el parque científico de la universidad, en Paterna (València).</span></div>
         </div>
       </div>
-      <aside class="panel reveal" data-delay="120">
-        <h2>Design principles</h2>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Curated domain knowledge</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Expert-guided iteration</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Deployment with continuous monitoring</span></li>
-        </ul>
-        <p class="panel-note">Our systems are designed to integrate into real operational workflows, with monitoring, oversight, and continuous evolution.</p>
-      </aside>
     </div>
   </section>
 
-  <section class="credband">
-    <div class="wrap">
-      <p class="cred-label">Backed by</p>
-      <div class="cred-grid">
-        <div class="cred reveal" data-delay="0"><h3>Spin-off of the Universitat de València</h3><p>Approved as the university’s first AI spin-off, April 2026.</p></div>
-        <div class="cred reveal" data-delay="70"><h3>Methodology co-owned with the CSIC</h3><p>Developed at IFIC, the Institute for Corpuscular Physics (UV–CSIC), and protected by IP rights.</p></div>
-        <div class="cred reveal" data-delay="140"><h3>Based at the Parc Científic</h3><p>Universitat de València science park, Paterna.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="what-we-do">
-    <div class="wrap split">
-      <h2 class="reveal">What We Do</h2>
-      <p class="lead reveal" data-delay="80">INFERA Labs builds tailored LLM systems and specialized AI workflows for regulated sectors, public institutions, and organisations operating complex technical systems. Our portfolio combines AI governance, anomaly detection, predictive modelling, multimodal analysis, expert validation, and practical training in the effective use of AI assistants and AI agents in deployment-ready environments.</p>
-    </div>
-  </section>
-
-  <section class="section" id="capabilities">
+  <section class="section" id="servicios" style="padding-top:0">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Key Capabilities</h2>
-        <p>Seven areas where we take technically demanding problems into reliable, deployable systems.</p>
+        <span class="eyebrow">Servicios</span>
+        <h2>De la idea al sistema en producción.</h2>
+        <p>Diseñamos sistemas adaptados al dominio, a los datos y a las condiciones operativas de cada cliente, y comprobamos que sean viables, útiles y gobernables antes de escalar.</p>
       </div>
-      <div class="grid-3">
-        <article class="card reveal" data-delay="0">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a4 4 0 0 0-4 4 3 3 0 0 0-1 5.83V15a4 4 0 0 0 4 4h1V3Z"/><path d="M13 3a4 4 0 0 1 4 4 3 3 0 0 1 1 5.83V15a4 4 0 0 1-4 4h-1"/></svg></div>
-          <h3>Domain-adapted LLM systems</h3>
-          <p>We design domain-adapted LLM systems for regulated sectors and high-complexity environments, with curated knowledge, expert validation, and a focus on traceability.</p>
-        </article>
-        <article class="card reveal" data-delay="60">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.2 2.9 8.1 7 9 4.1-.9 7-4.8 7-9V6l-7-3Z"/><path d="m9.2 11.8 2 2 3.6-3.6"/></svg></div>
-          <h3>Governance and reliability for AI systems</h3>
-          <p>We help structure AI systems that are monitorable and auditable, ready for governance frameworks, risk documentation, and evolving regulation.</p>
-        </article>
-        <article class="card reveal" data-delay="120">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3.5l2-6 3.5 12 2.5-8 1.8 2H21"/></svg></div>
-          <h3>Anomaly and rare-event detection</h3>
-          <p>We develop methods to detect rare events, operational deviations, and anomalous behaviour in multivariate, temporal, or sensor data.</p>
-        </article>
-        <article class="card reveal" data-delay="180">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 14 3.5-3.5 3 3L20 7"/><path d="M20 11V7h-4"/></svg></div>
-          <h3>Predictive intelligence for complex environments</h3>
-          <p>We apply predictive models, simulation, and uncertainty-aware analysis to networks, infrastructures, and complex dynamic systems.</p>
-        </article>
-        <article class="card reveal" data-delay="240">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.6 5.6 0 0 1 11 0"/><path d="m15.5 12.5 1.8 1.8 3.4-3.4"/></svg></div>
-          <h3>Expert validation in the deployment loop</h3>
-          <p>We integrate experts into the design, tuning, and validation loop to ensure operational relevance and reliability in real deployments.</p>
-        </article>
-        <article class="card reveal" data-delay="300">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></div>
-          <h3>Multimodal AI for technical settings</h3>
-          <p>We build solutions for scientific data, signals, sensors, and multimodal integration in technically demanding settings.</p>
-        </article>
-        <article class="card card-wide reveal">
-          <div class="card-body">
-            <div>
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 9 4.5-9 4.5-9-4.5L12 4Z"/><path d="M7 11v4.5c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V11"/><path d="M21 8.5V14"/></svg></div>
-              <h3>AI agent training</h3>
-              <p>Practical training in the effective use of AI assistants and AI agents for organisations at any level of AI maturity. We offer hands-on formats ranging from introductory sessions to advanced workshops tailored to technical, administrative, research or management teams.</p>
-            </div>
-            <a class="btn btn-secondary" href="#training">Discuss a training format</a>
-          </div>
-        </article>
+
+      <div class="svc-group">
+        <p class="svc-label">Desarrollo de IA</p>
+        <div class="svc-grid">
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></div>
+            <span class="num">01</span>
+            <h3>LLMs, asistentes y agentes</h3>
+            <p>IA generativa construida sobre vuestro conocimiento, documentación y procesos.</p>
+            <ul><li>Asistentes sobre documentación interna</li><li>Recuperación con cita de fuentes (RAG)</li><li>Adaptación a la terminología del sector</li><li>Agentes conectados a herramientas y datos</li></ul>
+          </article>
+          <article class="card reveal" data-delay="60">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 3 7-8"/><path d="M14 7h5v5"/></svg></div>
+            <span class="num">02</span>
+            <h3>ML e inteligencia predictiva</h3>
+            <p>Modelos que anticipan el comportamiento de un sistema y dicen cuánto fiarse de ellos.</p>
+            <ul><li>Previsión y series temporales</li><li>Clasificación y regresión</li><li>Modelado de sistemas dinámicos</li><li>Cuantificación de la incertidumbre</li></ul>
+          </article>
+          <article class="card reveal" data-delay="120">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></div>
+            <span class="num">03</span>
+            <h3>Anomalías y sistemas de alerta</h3>
+            <p>Detección de eventos raros, desviaciones operativas y señales tempranas.</p>
+            <ul><li>Datos multivariantes y temporales</li><li>Sensores, redes e instrumentación</li><li>Priorización de alertas</li><li>Modelos para eventos poco frecuentes</li></ul>
+          </article>
+          <article class="card reveal" data-delay="180">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="1.5"/><rect x="13" y="4" width="8" height="7" rx="1.5"/><rect x="3" y="13" width="8" height="7" rx="1.5"/><path d="M13 16.5h8M17 13v7"/></svg></div>
+            <span class="num">04</span>
+            <h3>IA multimodal</h3>
+            <p>Texto, imagen, señal, sensores y datos científicos combinados cuando una sola fuente no basta.</p>
+            <ul><li>Documentación técnica</li><li>Imagen y datos visuales</li><li>Señales y sensores</li><li>Datos científicos e instrumentales</li></ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="svc-group">
+        <p class="svc-label">Adoptar, validar y desplegar</p>
+        <div class="svc-grid two">
+          <article class="card card-wide reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></div>
+            <span class="num">05</span>
+            <h3>Diagnóstico, estrategia y viabilidad</h3>
+            <p>Un servicio de alcance cerrado para decidir qué merece la pena construir: casos de uso priorizados, evaluación de datos y riesgos, y una hoja de ruta o la definición de un piloto.</p>
+          </article>
+          <article class="card card-wide reveal" data-delay="60">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <span class="num">06</span>
+            <h3>Gobernanza, validación y fiabilidad</h3>
+            <p>Evaluación y benchmarks, trazabilidad y documentación de riesgos, supervisión humana, detección de deriva y apoyo a marcos como ISO/IEC 42001 y el Reglamento Europeo de IA.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="sectors">
+  <section class="section dark" id="sectores">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Where we work</h2>
-        <p>Four areas where we have already built and published working systems. Each one links to the research behind it.</p>
+        <span class="eyebrow">Sectores</span>
+        <h2>Donde un error cuesta caro.</h2>
+        <p>Trabajamos con organizaciones que no pueden permitirse una IA que se equivoque sin avisar ni una respuesta que no se pueda justificar.</p>
       </div>
       <div class="sectors">
-        <article class="sector reveal" data-delay="0">
-          <span class="sector-n">01</span>
-          <div>
-            <h3>Public administration &amp; smart city</h3>
-            <p class="sector-what">Real-time environmental and traffic alerting built on the sensor networks a city already has — forecasting, thresholds, and alerts operators can act on.</p>
-            <p class="sector-proof">Deployed in Valencia · Neural Computing and Applications, 2025</p>
-            <a class="sector-cta" href="?sector=public-administration#contact">Discuss a municipal pilot <span aria-hidden="true">&rarr;</span></a>
-          </div>
+        <article class="sector reveal">
+          <span class="tagline">Banca, seguros, farma, agroalimentación, energía</span>
+          <h3>Regulación y cumplimiento</h3>
+          <p>Asistentes que leen la normativa y la convierten en obligaciones y plazos, cada uno enlazado al artículo del que sale. Preparación para el Reglamento Europeo de IA.</p>
+          <p class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Demo sobre el Reglamento (UE) 2024/1689 y el registro fitosanitario, más abajo.</p>
+          <a class="more" href="?sector=regulated-compliance#contact">Hablemos de tu caso →</a>
         </article>
-        <article class="sector reveal" data-delay="70">
-          <span class="sector-n">02</span>
-          <div>
-            <h3>Critical infrastructure &amp; early warning</h3>
-            <p class="sector-what">Forecasting systems that quantify their own uncertainty, so operators know not only what is predicted but how far to trust it.</p>
-            <p class="sector-proof">Space Weather, 2023 · geomagnetic storm forecasting</p>
-            <a class="sector-cta" href="?sector=critical-infrastructure#contact">Discuss an early-warning system <span aria-hidden="true">&rarr;</span></a>
-          </div>
+        <article class="sector reveal" data-delay="60">
+          <span class="tagline">Industria de defensa y seguridad</span>
+          <h3>Defensa y seguridad</h3>
+          <p>Detección de anomalías en sensores y comunicaciones, fusión de datos de varias fuentes y modelos que declaran su incertidumbre, siempre con una persona al mando de la decisión.</p>
+          <p class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Métodos publicados de detección de anomalías y eventos raros.</p>
+          <a class="more" href="?sector=defence-security#contact">Hablemos de tu caso →</a>
         </article>
-        <article class="sector reveal" data-delay="140">
-          <span class="sector-n">03</span>
-          <div>
-            <h3>Health &amp; medical technology</h3>
-            <p class="sector-what">Machine learning on instrument and sensor data — event selection, reconstruction and image quality in physically demanding measurement settings.</p>
-            <p class="sector-proof">Radiation Physics and Chemistry, 2025 · Compton camera imaging</p>
-            <a class="sector-cta" href="?sector=health-medtech#contact">Discuss a clinical or instrument project <span aria-hidden="true">&rarr;</span></a>
-          </div>
+        <article class="sector reveal">
+          <span class="tagline">Hospitales, tecnología médica, instrumentación</span>
+          <h3>Salud y tecnología médica</h3>
+          <p>Aprendizaje automático sobre imagen médica, instrumentación y sensores: selección de eventos, reconstrucción, calidad de imagen y apoyo al diagnóstico explicable.</p>
+          <p class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Proyectos en curso. Publicaciones en imagen con cámara Compton (2025) y radiografía de tórax (2020).</p>
+          <a class="more" href="?sector=health-medtech#contact">Hablemos de tu caso →</a>
         </article>
-        <article class="sector reveal" data-delay="210">
-          <span class="sector-n">04</span>
-          <div>
-            <h3>Regulated industries &amp; compliance</h3>
-            <p class="sector-what">Language models that read legislation, standards and technical guidance and turn them into obligations, steps and deadlines — each traceable to its source.</p>
-            <p class="sector-proof">Methodology co-owned with the CSIC · ML on Spanish parliamentary corpora, 2026</p>
-            <a class="sector-cta" href="?sector=regulated-compliance#contact">Discuss a compliance workflow <span aria-hidden="true">&rarr;</span></a>
-          </div>
+        <article class="sector reveal" data-delay="60">
+          <span class="tagline">Energía, transporte, eventos, protección civil</span>
+          <h3>Infraestructuras críticas y emergencias</h3>
+          <p>Previsiones con su margen de error, alertas tempranas y simulación de multitudes para planificar eventos y evacuaciones antes de que ocurran.</p>
+          <p class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Aforia, alertas de tráfico validadas con datos de València y previsión de tormentas geomagnéticas (Space Weather, 2023).</p>
+          <a class="more" href="?sector=critical-infrastructure#contact">Hablemos de tu caso →</a>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section" id="how-we-start">
+  <section class="section dark" id="demos" style="padding-top:24px;background:var(--navy-950)">
     <div class="wrap">
-      <div class="offer reveal">
-        <div class="offer-main">
-          <p class="offer-label">How we start</p>
-          <h2>Feasibility assessment</h2>
-          <p class="lead">A fixed-scope engagement that answers one question: is this problem solvable with AI, on your data, to a standard you could actually deploy? You get a written assessment — what is feasible, what it would take, what could go wrong, and whether it is worth building at all.</p>
-          <p class="offer-note">Scope and price agreed before we start. If the answer is no, you get that in writing too.</p>
-          <a class="btn btn-primary" href="#contact">Request an assessment</a>
+      <div class="section-head reveal">
+        <span class="eyebrow">Demos</span>
+        <h2>Pruébalo antes de hablar con nosotros.</h2>
+        <p>Dos demostraciones con normativa real y con la geometría real de València. No son productos terminados: muestran cómo trabajamos.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Demostraciones">
+        <button role="tab" id="tab-traza" aria-selected="true" aria-controls="panel-traza">IA trazable · normativa</button>
+        <button role="tab" id="tab-aforia" aria-selected="false" aria-controls="panel-aforia" tabindex="-1">Aforia · multitudes</button>
+      </div>
+
+      <div class="tab-panel" id="panel-traza" role="tabpanel" aria-labelledby="tab-traza">
+        <div class="demo-shell">
+          <p class="demo-intro">Cada afirmación enlaza con el artículo o el registro oficial del que sale, y con la fecha de esos datos. Marca si una obligación ya rige, si regirá en una fecha cierta o si todavía es un proyecto de ley. Y cuando la pregunta necesita criterio humano, se detiene. <em>Es una demostración, no un servicio de asesoramiento.</em></p>
+          <div id="infera-demo" data-theme="light"></div>
+          <p class="demo-note">Respuestas calculadas de antemano sobre el Reglamento (UE) 2024/1689 consolidado a 27 de julio de 2026, el BOE y el registro oficial del MAPA. Ninguna ha sido validada todavía por un experto, y así se indica en la propia demostración.</p>
         </div>
-        <ol class="steps">
-          <li class="step reveal" data-delay="0"><span class="step-n">1</span><span class="step-t">Understand</span><span class="step-d">Feasibility, data, constraints</span></li>
-          <li class="step reveal" data-delay="60"><span class="step-n">2</span><span class="step-t">Develop</span><span class="step-d">Build against real workflows</span></li>
-          <li class="step reveal" data-delay="120"><span class="step-n">3</span><span class="step-t">Validate</span><span class="step-d">Expert review and testing</span></li>
-          <li class="step reveal" data-delay="180"><span class="step-n">4</span><span class="step-t">Scale</span><span class="step-d">Deploy with monitoring</span></li>
+      </div>
+
+      <div class="tab-panel" id="panel-aforia" role="tabpanel" aria-labelledby="tab-aforia" hidden>
+        <div class="aforia">
+          <figure><img src="assets/img/aforia-recinto.webp" width="1320" height="825" alt="Simulación de 10.000 personas en un recinto de conciertos: los puntos rojos junto al escenario marcan densidades por encima de 4 personas por metro cuadrado" loading="lazy"></figure>
+          <div>
+            <h3><small>Aforia · de INFERA Labs</small>Anticipa dónde se atasca la multitud.</h3>
+            <p>Aforia simula a cada persona sobre el plano real de un espacio y muestra dónde se formarán aglomeraciones peligrosas, cuánto tardará en vaciarse y qué medidas funcionan: cortes de calle, avisos al público, fosos delanteros o salidas más anchas.</p>
+            <div class="kpis">
+              <div class="kpi"><b>3,5 min</b><span>menos para vaciar la plaza con un aviso previo</span></div>
+              <div class="kpi"><b>7,6 min</b><span>de evacuación con salidas ampliadas (antes, 20,7)</span></div>
+              <div class="kpi"><b>25.000</b><span>personas simuladas en la plaza del Ayuntamiento</span></div>
+            </div>
+            <div class="btns">
+              <a class="btn btn-primary" href="aforia/index.html">Mascletà en la plaza del Ayuntamiento</a>
+              <a class="btn btn-ghost" href="aforia/recinto.html">Recinto de conciertos</a>
+            </div>
+            <p class="sim-note">Cifras obtenidas en simulación, con un modelo aún sin calibrar con datos de eventos reales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="como-trabajamos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>Validar primero, escalar después.</h2>
+        <p>Cada paso se acuerda solo cuando el anterior ha dado resultados.</p>
+      </div>
+      <div class="how">
+        <div class="offer reveal">
+          <span class="eyebrow">Por dónde empezar</span>
+          <h3>Evaluación de viabilidad</h3>
+          <p>Un encargo de alcance cerrado que responde a una pregunta: ¿se puede resolver este problema con IA, con tus datos y a un nivel que puedas desplegar de verdad? Recibes por escrito qué es viable, qué haría falta, qué puede salir mal y si merece la pena construirlo.</p>
+          <p class="promise">Alcance y precio acordados antes de empezar. Si la respuesta es que no, también te la damos por escrito.</p>
+          <a class="btn btn-primary" href="#contact" style="justify-self:start">Solicitar una evaluación</a>
+        </div>
+        <ol class="steps reveal" data-delay="80">
+          <li><div><b>Entender</b><span>El reto, los procesos, los datos y las restricciones.</span></div></li>
+          <li><div><b>Priorizar</b><span>Los casos de uso con más valor y viabilidad.</span></div></li>
+          <li><div><b>Desarrollar</b><span>Construir y adaptar al contexto real de trabajo.</span></div></li>
+          <li><div><b>Validar</b><span>Con usuarios, datos, métricas y criterios acordados.</span></div></li>
+          <li><div><b>Escalar</b><span>Integrar, formar, monitorizar y evolucionar.</span></div></li>
         </ol>
-        <p class="steps-note">Each step is agreed only once the previous one has produced results.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="approach">
+  <section class="section dark" id="formacion">
     <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Technology approach</h2>
-        <p>We combine expert-curated knowledge, iterative model adaptation, and validation grounded in real use cases to develop specialized AI systems for demanding technical and institutional contexts.</p>
-        <p style="margin-top:1rem">Our approach prioritizes operational reliability, traceability, monitoring, and continuous refinement in response to evolving technical, regulatory, and organizational requirements.</p>
-      </div>
-      <div class="grid-3">
-        <article class="card reveal" data-delay="0"><h3>Curated knowledge and domain context</h3><p>Expert-curated knowledge and domain context shape system scope, data selection, and practical model behavior from the outset.</p></article>
-        <article class="card reveal" data-delay="70"><h3>Iterative adaptation and continuous evaluation</h3><p>Models are adapted, tested, and reassessed against real workflows so performance remains relevant under operational conditions.</p></article>
-        <article class="card reveal" data-delay="140"><h3>Oversight and operational robustness</h3><p>We design for supervision, monitoring, and resilient deployment where reliability and accountability matter.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="governance">
-    <div class="wrap split">
-      <div class="reveal">
-        <h2>Governance and trusted deployment</h2>
-        <p class="lead" style="margin-top:1rem">AI systems in regulated environments require more than technical performance. They must be auditable, monitorable, and capable of fitting into governance, risk management, and continuous oversight frameworks.</p>
-      </div>
-      <div class="grid-2">
-        <article class="card reveal" data-delay="0"><h3>Readiness for AI governance frameworks</h3><p>Support for internal governance structures, implementation pathways, and control models suited to high-stakes deployments.</p></article>
-        <article class="card reveal" data-delay="60"><h3>Risk documentation and evidence trails</h3><p>Documentation practices, evidence trails, and accountability records aligned with responsible deployment needs.</p></article>
-        <article class="card reveal" data-delay="120"><h3>Monitoring and drift detection</h3><p>Operational monitoring approaches to track behaviour, surface drift, and maintain model performance over time.</p></article>
-        <article class="card reveal" data-delay="180"><h3>Support for ISO/IEC 42001 readiness</h3><p>Preparation-oriented support for teams aligning AI processes, records, and controls with ISO/IEC 42001 expectations.</p></article>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section section-alt" id="demo">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>A traceable, specialised AI</h2>
-        <p>Every claim links to the article or official register it came from, and to the date of that data. It marks whether an obligation already binds you, whether it will bind you on a set date, or whether it is still only a bill. And when a question needs human judgement it stops instead of answering for the sake of it. <em>This is a demonstration, not an advisory service.</em></p>
-      </div>
-      <div id="infera-demo" class="reveal"></div>
-      <p class="demo-note">The answers are computed in advance from Regulation (EU) 2024/1689 as consolidated on 27 July 2026, from the BOE and from Spain's official plant protection register. None has been validated by an expert yet, and the demonstration says so.</p>
-      <a class="btn btn-secondary" href="?sector=regulated-compliance#contact">Talk to us about a system like this for your sector</a>
-    </div>
-  </section>
-
-  <section class="section" id="research">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>The research behind the work</h2>
-        <p>Our scientific direction rests on published, peer-reviewed research. Verónica Sanz, our Chief Scientific Advisor, is Full Professor of Theoretical Physics at the Universitat de València and a researcher at IFIC (UV–CSIC).</p>
-      </div>
-    </div>
-
-    <div class="ticker" role="group" aria-label="One figure from each paper below">
-      <div class="ticker-track">
-          <figure class="tile">
-            <img src="/assets/img/research/fig-anomaly.webp" width="559" height="360" loading="lazy" decoding="async" alt="Colour heat map of an averaged particle-jet image">
-            <figcaption><span class="tile-paper">Anomaly awareness · 2023</span>Average jet image used to train the anomaly detector</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-traffic.webp" width="559" height="360" loading="lazy" decoding="async" alt="Grid of Valencia street maps comparing measured and predicted traffic states">
-            <figcaption><span class="tile-paper">Valencia traffic alarm · 2023</span>Measured against predicted traffic across Valencia street segments</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-polarization.webp" width="559" height="360" loading="lazy" decoding="async" alt="Line chart comparing the share of labour topics in parliament with the yearly unemployment rate">
-            <figcaption><span class="tile-paper">Polarization in parliament · 2026</span>Labour topics in parliamentary speech against the unemployment rate, 2000–2022</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-statistics.webp" width="559" height="360" loading="lazy" decoding="async" alt="Two overlapping distributions with a significance threshold marked in red">
-            <figcaption><span class="tile-paper">ML outputs to statistical criteria · 2022</span>Turning a classifier score into a significance threshold</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-symmetry.webp" width="559" height="360" loading="lazy" decoding="async" alt="Bar chart of symmetry likelihood overlaid on Van Gogh’s Starry Night Over the Rhône">
-            <figcaption><span class="tile-paper">Symmetry meets AI · 2021</span>Symmetry detected in Van Gogh’s Starry Night Over the Rhône</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-xray.webp" width="559" height="360" loading="lazy" decoding="async" alt="Chest X-ray with a Grad-CAM heat map highlighting a pleural effusion">
-            <figcaption><span class="tile-paper">Chest X-ray interpretation · 2020</span>Grad-CAM: where the model looked — pleural effusion</figcaption>
-          </figure>
-        <div class="ticker-copy" aria-hidden="true">
-          <figure class="tile">
-            <img src="/assets/img/research/fig-anomaly.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Anomaly awareness · 2023</span>Average jet image used to train the anomaly detector</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-traffic.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Valencia traffic alarm · 2023</span>Measured against predicted traffic across Valencia street segments</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-polarization.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Polarization in parliament · 2026</span>Labour topics in parliamentary speech against the unemployment rate, 2000–2022</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-statistics.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">ML outputs to statistical criteria · 2022</span>Turning a classifier score into a significance threshold</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-symmetry.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Symmetry meets AI · 2021</span>Symmetry detected in Van Gogh’s Starry Night Over the Rhône</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-xray.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Chest X-ray interpretation · 2020</span>Grad-CAM: where the model looked — pleural effusion</figcaption>
-          </figure>
+      <div class="training-top">
+        <div class="section-head reveal">
+          <span class="eyebrow">Formación</span>
+          <h2>Formación en IA para equipos.</h2>
+          <p>Programas prácticos para organizaciones públicas, privadas y científicas, adaptados al nivel y a los procesos reales de cada equipo. Combinamos comprensión conceptual, práctica guiada y aplicación a casos reales, con atención a la supervisión humana, la verificación y la protección de información sensible.</p>
         </div>
-        <div class="ticker-copy" aria-hidden="true">
-          <figure class="tile">
-            <img src="/assets/img/research/fig-anomaly.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Anomaly awareness · 2023</span>Average jet image used to train the anomaly detector</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-traffic.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Valencia traffic alarm · 2023</span>Measured against predicted traffic across Valencia street segments</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-polarization.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Polarization in parliament · 2026</span>Labour topics in parliamentary speech against the unemployment rate, 2000–2022</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-statistics.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">ML outputs to statistical criteria · 2022</span>Turning a classifier score into a significance threshold</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-symmetry.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Symmetry meets AI · 2021</span>Symmetry detected in Van Gogh’s Starry Night Over the Rhône</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-xray.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Chest X-ray interpretation · 2020</span>Grad-CAM: where the model looked — pleural effusion</figcaption>
-          </figure>
-        </div>
-        <div class="ticker-copy" aria-hidden="true">
-          <figure class="tile">
-            <img src="/assets/img/research/fig-anomaly.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Anomaly awareness · 2023</span>Average jet image used to train the anomaly detector</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-traffic.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Valencia traffic alarm · 2023</span>Measured against predicted traffic across Valencia street segments</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-polarization.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Polarization in parliament · 2026</span>Labour topics in parliamentary speech against the unemployment rate, 2000–2022</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-statistics.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">ML outputs to statistical criteria · 2022</span>Turning a classifier score into a significance threshold</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-symmetry.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Symmetry meets AI · 2021</span>Symmetry detected in Van Gogh’s Starry Night Over the Rhône</figcaption>
-          </figure>
-          <figure class="tile">
-            <img src="/assets/img/research/fig-xray.webp" width="559" height="360" loading="lazy" decoding="async" alt="">
-            <figcaption><span class="tile-paper">Chest X-ray interpretation · 2020</span>Grad-CAM: where the model looked — pleural effusion</figcaption>
-          </figure>
+        <div class="formats reveal" data-delay="80">
+          <div class="chips">
+            <span class="chip">Conferencia ejecutiva</span><span class="chip">Taller introductorio</span><span class="chip">Curso aplicado</span>
+            <span class="chip">Programa intensivo</span><span class="chip">Formación de formadores</span><span class="chip">Programa a medida</span>
+          </div>
+          <p>Presencial, online o híbrida · en español o en inglés · casos y ejercicios adaptados al sector, al nivel técnico y a los documentos del cliente.</p>
         </div>
       </div>
-    </div>
-
-    <div class="wrap">
-      <p class="ticker-credit">One figure from each paper, all co-authored by Verónica Sanz. Sources: <a href="https://arxiv.org/abs/2007.14462" rel="noopener">arXiv:2007.14462</a>, <a href="https://arxiv.org/abs/2309.02010" rel="noopener">2309.02010</a>, <a href="https://arxiv.org/abs/2203.03669" rel="noopener">2203.03669</a>, <a href="https://arxiv.org/abs/2103.06115" rel="noopener">2103.06115</a>, <a href="https://arxiv.org/abs/1906.11282" rel="noopener">1906.11282</a>, and the open preprint of the parliamentary-speech study. The painting shown is in the public domain.</p>
-      <a class="btn btn-secondary" href="/research/">See publications and metrics <span aria-hidden="true">&rarr;</span></a>
+      <div class="programs">
+        <article class="program reveal"><h3>IA generativa aplicada al trabajo profesional</h3><div class="meta"><span class="dur">4–8 h</span><span class="level l1">Inicial</span></div></article>
+        <article class="program reveal"><h3>Asistentes y agentes de IA</h3><div class="meta"><span class="dur">8 o 16 h</span><span class="level l1">Inicial–intermedio</span></div></article>
+        <article class="program reveal"><h3>Uso responsable y gobernanza de la IA</h3><div class="meta"><span class="dur">4–6 h</span><span class="level l1">Inicial</span></div></article>
+        <article class="program reveal"><h3>IA para equipos directivos</h3><div class="meta"><span class="dur">2–3 h</span><span class="level lx">Ejecutivo</span></div></article>
+        <article class="program reveal"><h3>IA para la administración pública</h3><div class="meta"><span class="dur">8–12 h</span><span class="level l1">Inicial–intermedio</span></div></article>
+        <article class="program reveal"><h3>IA para la docencia y la formación</h3><div class="meta"><span class="dur">8 h</span><span class="level l1">Inicial</span></div></article>
+        <article class="program reveal"><h3>IA para investigación y gestión de proyectos</h3><div class="meta"><span class="dur">8–12 h</span><span class="level l2">Intermedio</span></div></article>
+        <article class="program reveal"><h3>Diseño de asistentes especializados con RAG</h3><div class="meta"><span class="dur">12–16 h</span><span class="level l3">Intermedio–avanzado</span></div></article>
+        <article class="program reveal"><h3>Evaluación de sistemas de IA generativa</h3><div class="meta"><span class="dur">8–12 h</span><span class="level l2">Intermedio</span></div></article>
+        <article class="program reveal"><h3>Machine Learning aplicado</h3><div class="meta"><span class="dur">12–20 h</span><span class="level l2">Intermedio</span></div></article>
+      </div>
+      <div class="training-cta reveal">
+        <p>¿Buscas formación para tu equipo? Te preparamos una propuesta a medida.</p>
+        <a class="btn btn-primary" href="?sector=training#contact">Solicitar una propuesta de formación</a>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="founders">
+  <section class="section" id="investigacion">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Founders</h2>
-        <p>INFERA Labs brings together scientific depth, technical judgment and project-building experience in advanced AI.</p>
+        <span class="eyebrow">Investigación</span>
+        <h2>La ciencia detrás de cada sistema.</h2>
+        <p>Nuestra dirección científica se apoya en investigación publicada y revisada por pares en IA, sistemas complejos y física.</p>
       </div>
-      <div class="founders">
-        <article class="founder reveal" data-delay="0">
-          <picture>
-            <source srcset="/assets/img/jaime.webp" type="image/webp">
-            <img class="founder-photo" src="/assets/img/jaime.jpg" alt="Portrait of Jaime Alcalá" width="800" height="1000" loading="lazy" decoding="async">
-          </picture>
+      <div class="research-row">
+        <figure class="paper reveal"><img src="assets/img/research/fig-traffic.webp" width="559" height="360" alt="Mapas de calles de València comparando tráfico medido y predicho" loading="lazy"><figcaption><b>Alarma de tráfico · 2023</b>Previsión de tráfico en tramos de calle de València</figcaption></figure>
+        <figure class="paper reveal" data-delay="60"><img src="assets/img/research/fig-anomaly.webp" width="559" height="360" alt="Imagen promediada usada para entrenar un detector de anomalías" loading="lazy"><figcaption><b>Detección de anomalías · 2023</b>Detectores entrenados para reconocer lo que no han visto</figcaption></figure>
+        <figure class="paper reveal" data-delay="120"><img src="assets/img/research/fig-statistics.webp" width="559" height="360" alt="Dos distribuciones solapadas con un umbral de significancia" loading="lazy"><figcaption><b>Criterios estadísticos · 2022</b>Convertir la salida de un modelo en una decisión con garantías</figcaption></figure>
+        <figure class="paper reveal" data-delay="180"><img src="assets/img/research/fig-xray.webp" width="559" height="360" alt="Radiografía de tórax con un mapa de calor sobre un derrame pleural" loading="lazy"><figcaption><b>Imagen médica · 2020</b>Dónde mira el modelo al interpretar una radiografía</figcaption></figure>
+      </div>
+      <p class="research-more"><a class="btn btn-outline" href="es/investigacion/">Ver publicaciones y métricas →</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="equipo" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Equipo</span>
+        <h2>Fundadores.</h2>
+      </div>
+      <div class="team">
+        <article class="person reveal">
+          <picture><source srcset="assets/img/jaime.webp" type="image/webp"><img src="assets/img/jaime.jpg" width="240" height="240" alt="Retrato de Jaime Alcalá" loading="lazy"></picture>
           <div>
             <h3>Jaime Alcalá</h3>
-            <p class="role">CEO &amp; Co-Founder</p>
-            <p class="bio">Jaime Alcalá is CEO and Co-Founder of INFERA Labs. Trained as a physicist at the University of Valencia and holding an MBA from Universidad Nebrija, he works at the intersection of scientific thinking, innovation strategy and project development. His experience includes the structuring of complex technical initiatives, the preparation of competitive proposals and the development of partnerships across research, technology and innovation environments. At INFERA Labs, he focuses on translating technically demanding ideas into viable projects, collaborations and deployment pathways, helping connect advanced AI capabilities with concrete sectoral needs.</p>
+            <span class="role">CEO y cofundador</span>
+            <p>Físico por la Universitat de València y MBA por la Universidad Nebrija. Ha estructurado iniciativas técnicas complejas, propuestas competitivas y alianzas entre investigación, tecnología e innovación. En INFERA Labs convierte capacidades técnicas avanzadas en proyectos viables y vías de despliegue.</p>
           </div>
         </article>
-        <article class="founder reveal" data-delay="90">
-          <picture>
-            <source srcset="/assets/img/veronica.webp" type="image/webp">
-            <img class="founder-photo" src="/assets/img/veronica.jpg" alt="Portrait of Verónica Sanz" width="800" height="1000" loading="lazy" decoding="async">
-          </picture>
+        <article class="person reveal" data-delay="60">
+          <picture><source srcset="assets/img/veronica.webp" type="image/webp"><img src="assets/img/veronica.jpg" width="240" height="240" alt="Retrato de Verónica Sanz" loading="lazy"></picture>
           <div>
             <h3>Verónica Sanz</h3>
-            <p class="role">Chief Scientific Advisor &amp; Co-Founder</p>
-            <p class="bio">Verónica Sanz is Chief Scientific Advisor and Co-Founder of INFERA Labs. She is Full Professor of Theoretical Physics at the University of Valencia and researcher at the Institute for Corpuscular Physics (IFIC, UV-CSIC). Her work combines scientific modelling, data analysis and artificial intelligence, with expertise spanning particle physics beyond the Standard Model, effective field theory, dark matter, axions and advanced AI methods for complex, high-impact problems. At INFERA Labs, she provides the scientific and technical vision behind the company’s approach to domain-adapted AI, anomaly detection, complex-system intelligence and robust decision-support tools for high-stakes environments.</p>
+            <span class="role">Chief Scientific Advisor y cofundadora</span>
+            <p>Catedrática de Física Teórica en la Universitat de València e investigadora del IFIC (UV–CSIC). Combina modelización científica, análisis de datos e IA. En INFERA Labs aporta la dirección científica en IA especializada, inteligencia predictiva, detección de anomalías y apoyo a la decisión.</p>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="training">
-    <div class="wrap">
-      <div class="callout reveal">
-        <div>
-          <h2>Training in AI assistants and AI agents</h2>
-          <p>We offer practical training programmes for organisations that want to adopt AI tools effectively, from introductory sessions to more advanced, workflow-oriented formats. Suitable for teams at any level of prior experience.</p>
-        </div>
-        <div class="callout-side">
-          <p class="label">Training offer</p>
-          <p>Contact us for group formats and tailored quotations.</p>
-          <a class="btn btn-primary" href="#contact">Request a quote</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
+  <section class="section" id="contact" style="background:var(--surface);border-top:1px solid var(--line)">
     <div class="wrap contact-grid">
       <div class="reveal">
-        <h2 style="font-size:clamp(1.95rem,4vw,2.85rem)">Contact</h2>
-        <p class="lead" style="margin-top:1rem">Get in touch to discuss tailored AI solutions, technical collaborations, or training for your organisation.</p>
-        <p class="lead" style="margin-top:1rem">We also offer practical training in AI assistants and AI agents, from introductory sessions to advanced workshops for teams at any level of experience.</p>
+        <span class="eyebrow">Contacto</span>
+        <h2 style="font-size:clamp(32px,4vw,46px);margin-top:14px">Cuéntanos tu reto.</h2>
+        <p style="margin-top:16px;color:var(--ink-2);font-size:18px">Un desarrollo a medida, una evaluación de viabilidad o formación para tu equipo: cuéntanos qué necesitas y te respondemos personalmente.</p>
         <div class="contact-direct">
-          <a class="contact-link" href="mailto:info@inferalabs.es"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><span>info@inferalabs.es</span></a>
+          <a class="contact-link" href="mailto:info@inferalabs.es"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>info@inferalabs.es</a>
+          <a class="contact-link" href="https://www.linkedin.com/company/infera-labs-s-l/" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a>
         </div>
       </div>
-
       <form class="form reveal" id="contact-form" data-delay="80"
             data-endpoint=""
             data-mailto="info@inferalabs.es"
-            data-msg-ok="Thank you — your message has been sent. We’ll be in touch shortly."
-            data-msg-err="Something went wrong sending the form. Please email us directly at info@inferalabs.es."
-            data-msg-mail="Your email app should now open with the message ready to send."
-            data-msg-subject="Enquiry from inferalabs.es"
-            data-label-email="Reply to">
+            data-msg-ok="Gracias: hemos recibido tu mensaje. Te responderemos en breve."
+            data-msg-err="Ha ocurrido un problema al enviar el formulario. Escríbenos directamente a info@inferalabs.es."
+            data-msg-mail="Se abrirá tu aplicación de correo con el mensaje listo para enviar."
+            data-msg-subject="Consulta desde inferalabs.es"
+            data-label-email="Responder a">
         <div class="field-row">
-          <div class="field">
-            <label for="f-name">Name</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required data-label="Name">
-          </div>
-          <div class="field">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required>
-          </div>
+          <div class="field"><label for="f-name">Nombre</label><input id="f-name" name="name" type="text" autocomplete="name" required data-label="Nombre"></div>
+          <div class="field"><label for="f-email">Correo electrónico</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
         </div>
+        <div class="field"><label for="f-org">Empresa u organización</label><input id="f-org" name="organisation" type="text" autocomplete="organization" data-label="Organización"></div>
         <div class="field">
-          <label for="f-org">Organisation</label>
-          <input id="f-org" name="organisation" type="text" autocomplete="organization" data-label="Organisation">
-        </div>
-        <div class="field">
-          <label for="f-sector">Which area is closest to your need?</label>
-          <select id="f-sector" name="sector" data-label="Which area is closest to your need?">
-            <option data-key="public-administration">Public administration & smart city</option>
-            <option data-key="critical-infrastructure">Critical infrastructure & early warning</option>
-            <option data-key="health-medtech">Health & medical technology</option>
-            <option data-key="regulated-compliance">Regulated industries & compliance</option>
-            <option>AI training for teams</option>
-            <option>Something else</option>
+          <label for="f-sector">¿Qué te interesa?</label>
+          <select id="f-sector" name="sector" data-label="Interés">
+            <option data-key="regulated-compliance">Regulación y cumplimiento</option>
+            <option data-key="defence-security">Defensa y seguridad</option>
+            <option data-key="health-medtech">Salud y tecnología médica</option>
+            <option data-key="critical-infrastructure">Infraestructuras críticas y emergencias</option>
+            <option data-key="aforia">Aforia: simulación de multitudes</option>
+            <option data-key="training">Formación en IA para equipos</option>
+            <option data-key="feasibility">Evaluación de viabilidad</option>
+            <option>Otro</option>
           </select>
         </div>
-        <div class="field">
-          <label for="f-msg">How can we help?</label>
-          <textarea id="f-msg" name="message" required data-label="How can we help?"></textarea>
-        </div>
-        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <div class="field"><label for="f-msg">¿En qué podemos ayudarte?</label><textarea id="f-msg" name="message" required data-label="Mensaje"></textarea></div>
+        <div class="hp" aria-hidden="true"><label>Deja este campo vacío<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
         <p class="form-status" role="status" aria-live="polite"></p>
-        <button class="btn btn-primary" type="submit">Send message</button>
-        <p class="form-note">We reply from info@inferalabs.es. We only use your details to answer your enquiry.</p>
+        <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+        <p class="form-note">Respondemos desde info@inferalabs.es. Solo usamos tus datos para atender tu consulta.</p>
       </form>
     </div>
   </section>
@@ -553,45 +447,27 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img class="logo-light" src="/assets/img/logo.png" alt="INFERA Labs" width="982" height="231" loading="lazy">
-        <img class="logo-dark" src="/assets/img/logo-dark.png" alt="INFERA Labs" width="982" height="231" loading="lazy">
-        <p>Tailored deep tech solutions for regulated sectors, public institutions and critical technical operations.</p>
+        <img src="assets/img/logo-dark.png" alt="INFERA Labs" width="982" height="231" loading="lazy">
+        <p>IA predictiva fiable para sectores regulados, defensa y salud. Spin-off de la Universitat de València.</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-            <li><a href="#capabilities">Capabilities</a></li>
-            <li><a href="#sectors">Sectors</a></li>
-            <li><a href="#approach">Technology</a></li>
-            <li><a href="#governance">Governance</a></li>
-            <li><a href="#demo">Demos</a></li>
-        </ul>
+        <h4>Explorar</h4>
+        <ul><li><a href="#servicios">Servicios</a></li><li><a href="#sectores">Sectores</a></li><li><a href="#demos">Demos</a></li><li><a href="#formacion">Formación</a></li><li><a href="es/investigacion/">Investigación</a></li></ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:info@inferalabs.es">info@inferalabs.es</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://www.linkedin.com/company/infera-labs-s-l/" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://scholar.google.com/citations?user=n1PjQoYAAAAJ&hl=en" rel="noopener">Research</a></li>
-        </ul>
-        <h4 style="margin-top:1.5rem">Language</h4>
-        <ul>
-          <li><a href="/es/" lang="es" hreflang="es">Ver en español</a></li>
-        </ul>
+        <h4>Contacto</h4>
+        <ul><li><a href="mailto:info@inferalabs.es">info@inferalabs.es</a></li><li><a href="https://www.linkedin.com/company/infera-labs-s-l/" rel="noopener">LinkedIn</a></li><li><a href="https://scholar.google.com/citations?user=n1PjQoYAAAAJ&amp;hl=es" rel="noopener">Google Scholar</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Idioma</h4>
+        <ul><li><a href="en/index.html" lang="en" hreflang="en">English</a></li></ul>
       </div>
     </div>
-    <div class="footer-base">
-      <span>&copy; 2026 INFERA LABS S.L. &mdash; All rights reserved.</span>
-      <span class="legal-addr">Parc Científic de la Universitat de València, Catedrático Agustín Escardino 9, Paterna, València</span>
-      <span class="sep">inferalabs.es</span>
+    <div class="legal">
+      <span>© 2026 INFERA LABS S.L. Todos los derechos reservados.</span>
+      <span>Parc Científic de la Universitat de València, Catedrático Agustín Escardino 9, Paterna (València)</span>
     </div>
   </div>
 </footer>
-
-<script src="/assets/js/site.js" defer></script>
-<!-- Cookie-free analytics (no consent banner needed).
-     To activate: set ANALYTICS_CODE in content.py to your
-     GoatCounter code and rebuild. -->
 </body>
 </html>
