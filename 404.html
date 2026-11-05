@@ -1,41 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found — INFERA Labs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Página no encontrada — INFERA Labs</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0C1219" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#070f1d">
 <link rel="icon" href="/assets/img/icon-192.png" sizes="any" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/v2.css">
 <style>
-  .nf{min-height:100dvh;display:grid;place-items:center;text-align:center;padding:2rem}
-  .nf-inner{max-width:46ch;display:grid;gap:1.1rem;justify-items:center}
-  .nf img{width:190px;margin-bottom:.5rem}
-  .nf h1{font-size:clamp(1.9rem,5vw,2.6rem)}
-  .nf-code{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
-  .nf-actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:.75rem}
+  body { background: var(--navy-950); color: var(--on-dark); }
+  .nf { min-height: 100dvh; display: grid; place-items: center; text-align: center; padding: 32px 16px; }
+  .nf-inner { max-width: 34em; display: grid; gap: 18px; justify-items: center; }
+  .nf img { width: 190px; margin-bottom: 12px; }
+  .nf h1 { font-size: clamp(30px, 5vw, 44px); color: #fff; }
+  .nf p { color: var(--on-dark-2); }
+  .nf .eyebrow { color: var(--teal-400); }
+  .nf-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 8px; }
 </style>
 </head>
 <body>
-<div class="nf">
+<main class="nf">
   <div class="nf-inner">
-    <a href="/" aria-label="INFERA Labs">
-      <img class="logo-light" src="/assets/img/logo.png" alt="INFERA Labs" width="982" height="231">
-      <img class="logo-dark" src="/assets/img/logo-dark.png" alt="INFERA Labs" width="982" height="231">
-    </a>
-    <p class="nf-code">Error 404</p>
-    <h1>This page doesn’t exist</h1>
-    <p class="lead">The page you were looking for has moved or never existed. <span lang="es">La página que buscas no existe o ha cambiado de dirección.</span></p>
+    <a href="/" aria-label="INFERA Labs"><img src="/assets/img/logo-dark.png" alt="INFERA Labs" width="982" height="231"></a>
+    <span class="eyebrow">Error 404</span>
+    <h1>Esta página no existe</h1>
+    <p>La página que buscas ha cambiado de dirección o nunca existió. <span lang="en">The page you were looking for has moved or never existed.</span></p>
     <div class="nf-actions">
-      <a class="btn btn-primary" href="/">Home</a>
-      <a class="btn btn-secondary" href="/es/" lang="es" hreflang="es">Ver en español</a>
+      <a class="btn btn-primary" href="/">Ir al inicio</a>
+      <a class="btn btn-ghost" href="/en/" lang="en" hreflang="en">English home</a>
     </div>
   </div>
-</div>
+</main>
 </body>
 </html>
